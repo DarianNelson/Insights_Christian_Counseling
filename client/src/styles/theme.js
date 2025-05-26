@@ -30,8 +30,8 @@ const theme = createTheme({
     fontFamily: `'DM Sans', 'Poppins', 'sans-serif'`,
     h1: {// HERO SECTION TITLE
       fontWeight: 700,
-      color: '#FAF9F7',
-      fontSize: '2 rem', // 32pt font size
+      color: '#FAF9F7', // Warm Cream
+      fontSize: '3 rem', // 48pt font size
     },
     h2: {
       fontWeight: 600,
@@ -40,17 +40,18 @@ const theme = createTheme({
     },
     h3: { // HERO SECTION TEXT
       fontWeight: 500,
-      color: '#FAF9F7',
-      fontSize: '1.25rem', // 20pt font size
+      color: '#FAF9F7', // Warm Cream
+      fontSize: '1.5rem', // 20pt font size
+      lineHeight: 1.75,
     },
     h4: {
       fontWeight: 500,
-      color: '#3F7C78',
+      color: '#3F7C78', // Ocean Teal
       fontSize: '1.125rem', // 18pt font size
     },
     h5: {
       fontWeight: 500,
-      color: '#3F7C78',
+      color: '#3A3A3A', // Deep Charcoal
       fontSize: '1rem', // 16pt font size
     },
     body1: {// 16 is standard but i think 18 is better
@@ -72,12 +73,13 @@ const theme = createTheme({
         root: {
           borderRadius: '20px',
           padding: '8px 16px',
+          border: 1
         },
         containedSecondary: {
-          backgroundColor: '#E89072',
-          color: '#fff',
+          backgroundColor: '#E89072', // Soft Coral
+          color: '#FAF9F7', // Warm Cream
           '&:hover': {
-            backgroundColor: '#d57760',
+            backgroundColor: '#d57760', // Darker Soft Coral
           },
         },
       },
