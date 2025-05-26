@@ -1,9 +1,11 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
+import LisaHeadshot from '../assets/images/Headshots/Lisa.png';
+import HeadshotPlaceHolder from '../assets/images/Headshots/placeholder.jpg';
 
 const therapists = [
   {
     name: 'Lisa Parsons, LCSW',
-    image: '/images/Headshots/Lisa.png',
+    image: LisaHeadshot,
     description:
       'Lisa is a faith-based therapist specializing in trauma and anxiety, Lisa combines clinical expertise with compassionate, values-driven care. She is passionate about walking alongside clients as they seek healing, peace, and renewed purpose through evidence-based care and spiritual support.',
   },
@@ -52,7 +54,7 @@ export default function TherapistsSection() {
               >
                 <CardMedia
                   component="img"
-                  image={t.image || '/images/Headshots/placeholder.jpg'}
+                  image={t.image || HeadshotPlaceHolder}
                   alt={`Photo of ${t.name}`}
                   sx={{
                     width: { xs: 200, md: 150 },

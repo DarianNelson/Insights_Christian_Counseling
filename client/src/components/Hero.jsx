@@ -1,11 +1,13 @@
 import React from 'react';
+//import { Link } from 'react-router-dom';
 import { Box, Container, Typography, Button } from '@mui/material';
+import HeroImg from '../assets/images/Hero/hero.jpg';
 
 const Hero = () => {
   return (
     <Box
       sx={{
-        backgroundImage: 'url(/images/hero.jpg)',
+        backgroundImage: `url(${HeroImg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: 'white',
@@ -28,6 +30,8 @@ const Hero = () => {
         <Typography variant="h3" sx={{ mt: 2, opacity: 0.77 }}>
           We help people through anxiety, relational distress and the traumas they have experienced in life. Our mission is to create an accepting and supportive environment that helps you recognize patterns in your life that maintain your distress and find new thoughts and actions that will bring you the freedom to become the best version of yourself.
         </Typography>
+        
+        {/* Need to add link around Button with contact form */}
         <Button
           variant="contained"
           sx={{ 
@@ -43,6 +47,7 @@ const Hero = () => {
         >
           Schedule an Appointment
         </Button>
+
         <Typography variant="h3" color='#3A3A3A' display="block" sx={{ mt: 2 }}>
           "The Truth will set you free." - John 8:32
         </Typography>

@@ -1,14 +1,16 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
+import BlogPlaceHolder1 from '../assets/images/Blog/blog1.png';
+import BlogPlaceHolder2 from '../assets/images/Blog/blog2.jpg';
 
 const blogs = [
   {
     title: 'Faith and Mental Health',
-    image: '/images/blog1.jpg',
+    image: BlogPlaceHolder1,
     summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     title: 'Letting Go of What Hurts',
-    image: '/images/blog2.jpg',
+    image: BlogPlaceHolder2,
     summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
 ];
@@ -47,12 +49,14 @@ export default function BlogSection() {
               >
                 <CardMedia
                   component="img"
-                  height="200"
                   image={blog.image}
                   alt={blog.title}
                   sx={{ 
+                    height: 200,
+                    width: '100%',
                     objectFit: 'cover',
-                    borderRadius: '12px 12px 0 0',
+                    borderTopLeftRadius: 12,
+                    borderTopRightRadius: 12,
                   }}
                 />
                 <CardContent 
