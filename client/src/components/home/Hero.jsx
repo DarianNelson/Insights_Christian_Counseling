@@ -1,7 +1,7 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
 import { Box, Container, Typography, Button } from '@mui/material';
-import HeroImg from '../assets/images/Hero/hero.jpg';
+import HeroImg from '../../assets/images/Hero/hero.jpg';
 
 const Hero = () => {
   return (

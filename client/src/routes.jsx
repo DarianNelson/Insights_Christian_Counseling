@@ -13,6 +13,6 @@ export default function AppRouter() {
       <Route path="/resources" element={<Resources />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
-    </Routes>
+    </Routes>           
   );
 }

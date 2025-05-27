@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
-import BlogPlaceHolder1 from '../assets/images/Blog/blog1.png';
-import BlogPlaceHolder2 from '../assets/images/Blog/blog2.jpg';
+import BlogPlaceHolder1 from '../../assets/images/Blog/blog1.png';
+import BlogPlaceHolder2 from '../../assets/images/Blog/blog2.jpg';
 
 const blogs = [
   {

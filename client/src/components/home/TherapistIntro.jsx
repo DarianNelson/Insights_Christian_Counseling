@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
-import LisaHeadshot from '../assets/images/Headshots/Lisa.png';
-import HeadshotPlaceHolder from '../assets/images/Headshots/placeholder.jpg';
+import LisaHeadshot from '../../assets/images/Headshots/Lisa.png';
+import HeadshotPlaceHolder from '../../assets/images/Headshots/placeholder.jpg';
 
 const therapists = [
   {

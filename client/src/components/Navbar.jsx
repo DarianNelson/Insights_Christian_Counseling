@@ -1,13 +1,19 @@
 import React from 'react';
-import { AppBar, Toolbar, Button } from '@mui/material'; //box?
+import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Button, Box } from '@mui/material';
 
 const Navbar = () => {
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
-      <Toolbar sx={{ justifyContent: 'center', gap: 2 }}>
-        {['Home', 'About', 'Resources', 'Blog', 'Contact', 'Client Portal'].map(label => (
-          <Button key={label} color="inherit">{label}</Button>
-        ))}
+    <AppBar position="static" sx={{ backgroundColor: '#3F7C78' }}>
+      <Toolbar>
+        <Box sx={{ flexGrow: 1 }}>
+          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/about">About</Button>
+          <Button color="inherit" component={Link} to="/resources">Resources</Button>
+          <Button color="inherit" component={Link} to="/blog">Blog</Button>
+          <Button color="inherit" component={Link} to="/contact">Contact</Button>
+          <Button color="inherit" component={Link} to="/portal">Client Portal</Button>
+        </Box>
       </Toolbar>
     </AppBar>
   );
