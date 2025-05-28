@@ -4,7 +4,7 @@ const BookList = ({ books }) => {
   if (!books || books.length === 0) return null;
 
   return (
-    <Box sx={{ height: 500,overflowY: 'auto', pr: 1 }}>
+    <Box sx={{ height: 585, overflowY: 'auto', pr: 1 }}>
       <Stack spacing={2}>
         {books.map((book, index) => (
           <Card key={index} sx={{ bgcolor: '#ffffff', borderLeft: '6px solid #E89072' }}>
