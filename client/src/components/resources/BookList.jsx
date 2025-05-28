@@ -7,7 +7,7 @@ const BookList = ({ books }) => {
     <Box sx={{ height: 585, overflowY: 'auto', pr: 1 }}>
       <Stack spacing={2}>
         {books.map((book, index) => (
-          <Card key={index} sx={{ bgcolor: '#ffffff', borderLeft: '6px solid #E89072' }}>
+          <Card key={index} sx={{ bgcolor: '#FAF9F7' }}>
             <CardContent>
               <Typography variant="h6" fontWeight="bold">
                 <Link href={book.link} target="_blank" rel="noopener">

@@ -7,7 +7,7 @@ const ResourceCard = ({ title, items, color }) => (
     sx={{
       p: 2,
       bgcolor: '#FAF9F7',
-      borderLeft: `4px solid ${color}`,
+      borderRadius: 4,
       display: 'flex',
       maxWidth: { xs: '100%', sm: '100%', md: 350 },
       width: '100%',
