@@ -20,9 +20,9 @@ import Logo from '../assets/images/Logo/Insights_Logo.PNG';
 const navItems = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/resources', label: 'Resources' },
+  { to: '/#resources', label: 'Resources' },
   { to: '/blog', label: 'Blog' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/#contact', label: 'Contact' },
   { to: '/portal', label: 'Client Portal' },
 ];
 
@@ -43,24 +43,43 @@ const Navbar = () => {
           {/* Desktop Nav */}
           {!isMobile && (
             <Box sx={{ display: 'flex', gap: 2 }}>
-              {navItems.map((item) => (
-                <Button
-                  key={item.to}
-                  component={Link}
-                  to={item.to}
-                  sx={{
-                    color: '#3A3A3A',
-                    fontSize: '1.1rem',
-                    textTransform: 'none',
-                    '&:hover': {
-                      backgroundColor: '#E89072',
-                      color: '#FFFFFF',
-                    },
-                  }}
-                >
-                  {item.label}
-                </Button>
-              ))}
+              {navItems.map((item) =>
+                item.to.startsWith('/#') ? (
+                  <Button
+                    key={item.to}
+                    component="a"
+                    href={item.to}
+                    sx={{
+                      color: '#3A3A3A',
+                      fontSize: '1.1rem',
+                      textTransform: 'none',
+                      '&:hover': {
+                        backgroundColor: '#E89072',
+                        color: '#FFFFFF',
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                ) : (
+                  <Button
+                    key={item.to}
+                    component={Link}
+                    to={item.to}
+                    sx={{
+                      color: '#3A3A3A',
+                      fontSize: '1.1rem',
+                      textTransform: 'none',
+                      '&:hover': {
+                        backgroundColor: '#E89072',
+                        color: '#FFFFFF',
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                )
+              )}
             </Box>
           )}
 
@@ -89,9 +108,15 @@ const Navbar = () => {
           <List>
             {navItems.map((item) => (
               <ListItem key={item.to} disablePadding>
-                <ListItemButton component={Link} to={item.to}>
-                  <ListItemText primary={item.label} sx={{ color: '#3A3A3A' }} />
-                </ListItemButton>
+                {item.to.startsWith('/#') ? (
+                  <ListItemButton component="a" href={item.to}>
+                    <ListItemText primary={item.label} sx={{ color: '#3A3A3A' }} />
+                  </ListItemButton>
+                ) : (
+                  <ListItemButton component={Link} to={item.to}>
+                    <ListItemText primary={item.label} sx={{ color: '#3A3A3A' }} />
+                  </ListItemButton>
+                )}
               </ListItem>
             ))}
           </List>

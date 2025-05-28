@@ -4,6 +4,8 @@ import Hero from '../components/home/Hero';
 import TherapistsIntro from '../components/home/TherapistIntro';
 import ServicesSection from '../components/home/ServicesSection';
 import BlogSection from '../components/home/BlogSection';
+import ResourcePageSection from '../components/home/ResourcePageSection';
+import ContactPageSection from '../components/home/ContactPageSection';
 
 const Home = () => {
   return (
@@ -21,6 +23,15 @@ const Home = () => {
       <Container maxWidth="lg" sx={{ py: 6 }}>
         <BlogSection />
       </Container>
+
+      <Box id="resources" sx={{ py: 6 }}>
+        <ResourcePageSection />
+      </Box>
+
+      <Container id="contact" maxWidth="lg" sx={{ py: 6 }}>
+        <ContactPageSection />
+      </Container>
+
     </Box>
   );
 };
