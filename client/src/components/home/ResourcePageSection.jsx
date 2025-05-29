@@ -8,9 +8,16 @@ import { localResources, hotlines, otherResources } from '../../data/resourceDat
 const ResourcesSection = () => {
   return (
     <Box sx={{ py: 6, px: { xs: 2, sm: 4, md: 6 } }}>
-      <Typography variant="h2" gutterBottom color="primary" align="center" sx={{ mb: 4 }}>
-        Resources
-      </Typography>
+              <Typography
+          id="therapists"
+          variant="h2"
+          textAlign="center"
+          fontWeight="bold"
+          color="#3F7C78"
+          sx={{ mb: 4, fontSize: { xs: '2rem', md: '2.25rem' } }} //trying manual font sizing
+        >
+          Resources
+        </Typography>
       <Grid container spacing={3} justifyContent="center" alignItems="flex-start">
         <Grid item xs={12} sm={12} md={4}>
           <BookList books={recommendedBooks} />
