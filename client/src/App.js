@@ -5,6 +5,7 @@ import theme from './styles/theme'; // adjust path as needed
 import AppRouter from './routes'; // or './AppRouter'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import './styles/App.css';
 
 function App() {
   return (

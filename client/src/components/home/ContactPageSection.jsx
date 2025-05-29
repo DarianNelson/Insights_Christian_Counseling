@@ -21,7 +21,7 @@ const ContactSection = () => {
   return (
     <Box sx={{ p: 4, maxWidth: "1200px", mx: "auto" }}>
       <Typography
-          id="Contact"
+          id="contact"
           variant="h2"
           textAlign="center"
           fontWeight="bold"

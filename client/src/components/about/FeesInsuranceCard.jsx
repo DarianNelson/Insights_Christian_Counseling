@@ -4,6 +4,7 @@ import { Box, Typography } from "@mui/material";
 const FeesInsuranceCard = ({ fees, insurance }) => {
   return (
     <Box
+      id="insurance"
       sx={{
         backgroundColor: "#FAF9F7",
         mt: 2,

@@ -54,6 +54,7 @@ const AppointmentInfo = () => {
     <>
       {/* Hero image section */}
       <Box
+        id="first-appointment"
         sx={{
           backgroundImage: `url('${FirstAptImg}')`,
           backgroundSize: "cover",

@@ -9,7 +9,7 @@ const ResourcesSection = () => {
   return (
     <Box sx={{ py: 6, px: { xs: 2, sm: 4, md: 6 } }}>
               <Typography
-          id="therapists"
+          id="resources"
           variant="h2"
           textAlign="center"
           fontWeight="bold"

@@ -38,12 +38,38 @@ const Footer = () => {
               <Typography variant="body2">
                 Insights Christian Counseling
               </Typography>
-              <Typography variant="body2">
-                123 Wellness St.
-                <br />
-                Springfield, ST 12345
+
+              <MuiLink
+                href="https://www.google.com/maps/search/?api=1&query=123+Wellness+St,+Springfield,+ST+12345"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="hover"
+                color="inherit"
+                variant="body2"
+              >
+                240B Courthouse Rd.
+                <br /> Gulfport, MS 39507
+              </MuiLink>
+
+              <Typography variant="body2" gutterBottom>
+                <MuiLink
+                  href="tel:12283433432"
+                  underline="hover"
+                  color="inherit"
+                >
+                  (228) 343-3432
+                </MuiLink>
               </Typography>
-              <Typography variant="body2">(123) 456-7890</Typography>
+              <Typography variant="body2" gutterBottom>
+                <MuiLink
+                  variant="body2"
+                  href="tel:12285674612"
+                  underline="hover"
+                  color="inherit"
+                >
+                  (228) 567-4612
+                </MuiLink>
+              </Typography>
             </Grid>
 
             {/* Explore */}
@@ -59,7 +85,7 @@ const Footer = () => {
                 About
               </MuiLink>
               <br />
-              <MuiLink href="/resources" underline="hover" color="inherit">
+              <MuiLink href="/#resources" underline="hover" color="inherit">
                 Resources
               </MuiLink>
               <br />
@@ -67,7 +93,7 @@ const Footer = () => {
                 Blog
               </MuiLink>
               <br />
-              <MuiLink href="/contact" underline="hover" color="inherit">
+              <MuiLink href="/#contact" underline="hover" color="inherit">
                 Contact
               </MuiLink>
             </Grid>
@@ -77,16 +103,20 @@ const Footer = () => {
               <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
                 Support
               </Typography>
-              <MuiLink href="/new-patients" underline="hover" color="inherit">
+              <MuiLink
+                href="/about#first-appointment"
+                underline="hover"
+                color="inherit"
+              >
                 New Patients
               </MuiLink>
               <br />
-              <MuiLink href="/insurance" underline="hover" color="inherit">
-                Insurance
-              </MuiLink>
-              <br />
-              <MuiLink href="/help" underline="hover" color="inherit">
-                Help & Resources
+              <MuiLink
+                href="/about#insurance"
+                underline="hover"
+                color="inherit"
+              >
+                Billing & Insurance
               </MuiLink>
             </Grid>
 
@@ -95,11 +125,23 @@ const Footer = () => {
               <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
                 Legal
               </Typography>
-              <MuiLink href="/privacy" underline="hover" color="inherit">
+              <MuiLink
+                href="/privacy-practices.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="hover"
+                color="inherit"
+              >
                 Privacy Practices
               </MuiLink>
               <br />
-              <MuiLink href="/no-surprises" underline="hover" color="inherit">
+              <MuiLink
+                href="https://www.cms.gov/nosurprises"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="hover"
+                color="inherit"
+              >
                 No Surprises Act
               </MuiLink>
             </Grid>
