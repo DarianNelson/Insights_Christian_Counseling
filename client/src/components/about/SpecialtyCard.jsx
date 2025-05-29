@@ -1,17 +1,42 @@
-import React from 'react';
-import { Box, Typography, Chip, Stack } from '@mui/material';
+import React from "react";
+import { Box, Typography } from "@mui/material";
 
 const SpecialtyCard = ({ specialties }) => {
   return (
-    <Box mb={2}>
-      <Typography variant="subtitle1" gutterBottom color="#3F7C78">
+    <Box
+      sx={{
+        backgroundColor: "#BFDAD5",
+        mt: 2,
+        p: 2,
+        borderRadius: 2,
+        boxShadow: 1,
+        width: { xs: "100%", sm: '100%', md: 240 }, // match headshot width
+        textAlign: "center",
+      }}
+    >
+      <Typography
+        variant="h4"
+        sx={{
+          fontWeight: 600,
+          color: "#3F7C78",
+          mb: 1,
+        }}
+      >
         Areas of Specialty
       </Typography>
-      <Stack direction="row" flexWrap="wrap" gap={1}>
-        {specialties.map((item, idx) => (
-          <Chip key={idx} label={item} variant="outlined" sx={{ bgcolor: '#BFDAD5' }} />
-        ))}
-      </Stack>
+
+      {specialties.map((item, idx) => (
+        <Typography
+          key={idx}
+          variant="body1"
+          sx={{
+            color: "#3A3A3A",
+            lineHeight: 1.6,
+          }}
+        >
+          {item}
+        </Typography>
+      ))}
     </Box>
   );
 };

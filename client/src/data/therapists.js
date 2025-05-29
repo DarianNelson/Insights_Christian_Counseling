@@ -1,12 +1,15 @@
 import LisaHeadshot from '../assets/images/Headshots/Lisa.png';
-import HeadshotPlaceholder from '../assets/images/Headshots/placeholder.jpg';
+import AmandaHeadshot from '../assets/images/Headshots/Amanda.png';
 export const therapistsData = [
 
   {
     name: "Lisa Parsons, LCSW",
     credentials: "Licensed Professional Counselor",
     license: "MS License #9311",
+    affiliation: "Member in good standing with the American Association of Christian Counselors",
     photo: LisaHeadshot, 
+    psychologyTodayUrl: "https://www.psychologytoday.com/us/therapists/insights-christian-counseling-gulfport-ms/982404",
+    contactFormUrl: "",
     bio: [
       "My journey toward becoming a therapist began during a personal season of healing from heartbreak, when I discovered a calling from God to walk alongside others through their own challenges. I chose to nurture that calling by earning a Master’s degree in Social Work from Washburn University in Topeka, Kansas.",
       "My early professional experience included working in school social work, followed by a role in community mental health, where I served as both a crisis therapist and a psychotherapist. These experiences allowed me to develop a wide range of clinical skills while deepening my passion for helping others heal.",
@@ -57,7 +60,9 @@ export const therapistsData = [
     name: "Amanda Whichard, NCC, LPC, LPC/MHSP",
     credentials: "Licensed Professional Counselor",
     license: "MS License TBD · TN License #5462",
-    photo: HeadshotPlaceholder,
+    photo: AmandaHeadshot,
+    psychologyTodayUrl: "https://www.psychologytoday.com/us/therapists/amanda-whichard-knoxville-tn/965071",
+    contactFormUrl: "",
     bio: [
       "You may be feeling overwhelmed by the constant cycle of anxiety, intrusive thoughts, or the effects of trauma. It can be exhausting when the strategies that once helped no longer work—leaving you feeling stuck, discouraged, or unsure what to do next. But healing is possible. My goal is to provide a safe, supportive space where you can feel truly heard, understood, and empowered to create real change.",
       "I specialize in working with women navigating anxiety, OCD, and trauma-related challenges. My approach blends warmth and clinical skill, drawing from evidence-based practices like Cognitive Behavioral Therapy (CBT/iCBT), Internal Family Systems (IFS), Mindfulness, and EMDR. I tailor our work together based on your needs and goals—and when desired, I welcome faith and spiritual development into the process.",
