@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
+// SpecialtyCard displays a list of specialty areas for a therapist
+// Receives `specialties` as a prop and maps through it to render each item
 const SpecialtyCard = ({ specialties }) => {
   return (
     <Box
@@ -13,6 +15,8 @@ const SpecialtyCard = ({ specialties }) => {
         width: { xs: "100%", sm: '100%', md: 240 }, // match headshot width
         textAlign: "center",
       }}
+      role="region" 
+      aria-label="Areas of Specialty" 
     >
       <Typography
         variant="h4"
@@ -21,6 +25,7 @@ const SpecialtyCard = ({ specialties }) => {
           color: "#3F7C78",
           mb: 1,
         }}
+        id="specialty-heading" 
       >
         Areas of Specialty
       </Typography>
@@ -33,6 +38,7 @@ const SpecialtyCard = ({ specialties }) => {
             color: "#3A3A3A",
             lineHeight: 1.6,
           }}
+          tabIndex={0} 
         >
           {item}
         </Typography>

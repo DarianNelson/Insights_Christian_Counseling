@@ -1,75 +1,95 @@
-// resourcedata.js
+// This file exports categorized resource arrays used in the Resources page.
+// These are rendered in <ResourceList /> or <ResourceCard /> components for visual and interactive display.
+
+// localResources include regional organizations and support centers
 export const localResources = [
-  { label: "Adrienne's House - Pascagoula", 
+  {
+    label: "Adrienne's House - Pascagoula",
     detail: "228-762-8267",
     tel: "+12287628267",
     link: "",
   },
-  { label: "Gulf Coast Family Justice Center - Biloxi", 
+  {
+    label: "Gulf Coast Family Justice Center - Biloxi",
     detail: "228-435-1968",
     tel: "+12284351968",
     link: "",
   },
-  { label: "Safe Haven Center- Gulfport", 
+  {
+    label: "Safe Haven Center- Gulfport",
     detail: "228-547-1143",
     tel: "+12285471143",
     link: "",
   },
-  { label: "Mental Health Mississippi", 
+  {
+    label: "Mental Health Mississippi",
     detail: "601-359-1288",
     tel: "+16013591288",
     link: "",
   },
-  { label: "Mississippi Coalition Against Domestic Violence (MCADV)", 
+  {
+    label: "Mississippi Coalition Against Domestic Violence (MCADV)",
     detail: "601-981-9196",
     tel: "+16019819196",
     link: "",
   },
-  { label: "Osher Lifelong Learning Institute (OLLI)", 
+  {
+    label: "Osher Lifelong Learning Institute (OLLI)",
     detail: "228-214-3277",
     tel: "+12282143277",
     link: "",
   },
-  { label: "Charles L Walker Senior Center", 
+  {
+    label: "Charles L Walker Senior Center",
     detail: "228-575-4535",
     tel: "+12285754535",
     link: "",
   },
 ];
 
+// hotlines include national and regional emergency and support lines
 export const hotlines = [
-  { label: "National Domestic Violence Hotline:", 
+  {
+    label: "National Domestic Violence Hotline:",
     detail: "1-800-799-7233",
     tel: "+18007997233",
     link: "",
   },
-  { label: "Gulf Coast Center for Non-Violence", 
+  {
+    label: "Gulf Coast Center for Non-Violence",
     detail: "228-436-3809",
+    tel: "+12284363809",
     link: "",
   },
-  { label: "Suicide and Crisis Lifeline:", 
+  {
+    label: "Suicide and Crisis Lifeline:",
     detail: "988",
     tel: "988",
     link: "",
-    note: "Call or Text"
+    note: "Call or Text", // note field is shown for user context
   },
-  { label: "Love is Respect", 
+  {
+    label: "Love is Respect",
     detail: "1-866-331-9474",
     tel: "+18663319474",
     link: "",
   },
 ];
 
+//otherResources include websites and general tools outside the local area
 export const otherResources = [
-  { label: "Divorce & Grief Recovery Workshops", 
+  {
+    label: "Divorce & Grief Recovery Workshops",
     detail: "228-863-0047",
     tel: "+12288630047",
-    //link: "",
+    link: "",
   },
-  { label: "Medication Information", 
+  {
+    label: "Medication Information",
     link: "https://www.drugs.com/",
   },
-  { label: "Therapy in a Nutshell",
+  {
+    label: "Therapy in a Nutshell",
     link: "https://www.youtube.com/channel/UCpuqYFKLkcEryEieomiAv3Q/videos",
-  }
+  },
 ];

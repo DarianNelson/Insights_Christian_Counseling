@@ -2,9 +2,12 @@ import React from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import HeroImg from "../../assets/images/Hero/hero.jpg";
 
+// Hero component: displays homepage banner with background image, mission statement, verses, and CTA
 const Hero = () => {
   return (
     <Box
+      role="banner" 
+      aria-label="Homepage hero section" 
       sx={{
         backgroundImage: `url(${HeroImg})`,
         backgroundSize: "cover",
@@ -17,31 +20,35 @@ const Hero = () => {
         alignItems: "center",
         textAlign: "center",
         px: 2,
-        py: { xs: 8, md: 12 },
+        py: { xs: 8, md: 12 }, // responsive padding
       }}
     >
       <Container maxWidth="md">
+        {/* SITE TITLE */}
         <Typography
           variant="h1"
           gutterBottom
           sx={{
-            fontSize: { xs: "2rem", sm: "2.75rem", md: "3rem" },
+            fontSize: { xs: "2rem", sm: "2.75rem", md: "3rem" }, // responsive sizing
           }}
         >
           INSIGHTS CHRISTIAN COUNSELING
         </Typography>
 
+        {/* OPENING SCRIPTURE QUOTE */}
         <Typography
           variant="h3"
           gutterBottom
+          aria-label='Scripture: "He heals the brokenhearted..." from Psalm 147:3' // !! Works
           sx={{
             color: "text.secondary",
-            fontSize: { xs: "1.25rem", sm: "1.5rem" },
+            fontSize: { xs: "1.25rem", sm: "1.5rem" }, // responsive sizing
           }}
         >
           "He heals the brokenhearted..." – Psalm 147:3
         </Typography>
 
+        {/* MISSION STATEMENT PARAGRAPH */}
         <Typography
           variant="body1"
           sx={{
@@ -64,12 +71,14 @@ const Hero = () => {
           yourself.
         </Typography>
 
+        {/* CALL TO ACTION BUTTON */}
         <Button
           variant="contained"
           component="a"
           href="https://your-hushmail-form-link.com"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Schedule an appointment through secure form" // !! Works
           color="secondary"
           sx={{
             mt: 6,
@@ -82,8 +91,10 @@ const Hero = () => {
           Schedule an Appointment
         </Button>
 
+        {/* CLOSING SCRIPTURE QUOTE */}
         <Typography
           variant="h3"
+          aria-label='Scripture: "The Truth will set you free." from John 8:32' 
           sx={{
             mt: 4,
             color: "text.primary",

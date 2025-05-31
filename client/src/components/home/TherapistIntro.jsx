@@ -1,9 +1,12 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { therapistsData } from '../../data/therapists';
 
+// TherapistsSection component: renders a list of therapist cards with photos, bios, and a "Learn More" button
 export default function TherapistsSection() {
   return (
     <Box
+      component="section"
+      aria-labelledby="therapists" 
       sx={{
         backgroundColor: '#F5EFE6',
         pt: { xs: 6, md: 8 },
@@ -11,25 +14,29 @@ export default function TherapistsSection() {
       }}
     >
       <Container>
+        {/* SECTION TITLE */}
         <Typography
-          id="therapists"
+          id="therapists" 
           variant="h2"
           textAlign="center"
           fontWeight="bold"
           color="#3F7C78"
-          sx={{ mb: 4, fontSize: { xs: '2rem', md: '2.25rem' } }} //trying manual font sizing
+          sx={{ mb: 4, fontSize: { xs: '2rem', md: '2.25rem' } }} // Responsive font sizing
         >
           Meet Our Therapists
         </Typography>
 
-        <Grid container spacing={3} justifyContent="center"> {/* reduced spacing */}
+        {/* RESPONSIVE GRID: maps through therapistsData and displays each in its own card */}
+        <Grid container spacing={3} justifyContent="center">
           {therapistsData.map((t) => (
             <Grid item xs={12} md={6} key={t.slug}>
               <Card
+                role="article" 
+                aria-label={`Therapist profile for ${t.name}`}
                 sx={{
                   p: 2,
                   display: 'flex',
-                  flexDirection: { xs: 'column', md: 'row' },
+                  flexDirection: { xs: 'column', md: 'row' }, // Responsive: stack on mobile, side-by-side on desktop
                   alignItems: { xs: 'center', md: 'stretch' },
                   backgroundColor: '#FAF9F7',
                   borderRadius: 3,
@@ -37,6 +44,7 @@ export default function TherapistsSection() {
                   minHeight: { md: 160 },
                 }}
               >
+                {/* THERAPIST PHOTO */}
                 <CardMedia
                   component="img"
                   image={t.photo}
@@ -52,6 +60,7 @@ export default function TherapistsSection() {
                   }}
                 />
 
+                {/* CONTENT: Name, intro, and Learn More button */}
                 <CardContent
                   sx={{
                     flex: 1,
@@ -74,9 +83,11 @@ export default function TherapistsSection() {
                     </Typography>
                   </Box>
 
+                  {/* LEARN MORE BUTTON: links to corresponding therapist section on About page */}
                   <Button
                     size="large"
-                    href={`/about#${t.slug}`}
+                    href={`/about#${t.slug}`} // Uses slug to deep link into the About page
+                    aria-label={`Learn more about therapist ${t.name}`} 
                     sx={{
                       mt: { xs: 2, md: 0 },
                       color: '#D38775',

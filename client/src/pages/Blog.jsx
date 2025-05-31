@@ -11,19 +11,19 @@ import {
   Button,
 } from "@mui/material";
 
+// Mock post data - in production, this would be replaced with data from Sanity or another CMS
 const mockPosts = [
   {
     _id: "1",
     title: "Coping with Anxiety in Daily Life",
     excerpt: "Practical ways to manage anxiety and create moments of calm.",
-    mainImage: "https://picsum.photos/400/300?random=1",
+    mainImage: "https://picsum.photos/400/300?random=1", // Placeholder image
     publishedAt: "2025-05-15",
   },
   {
     _id: "2",
     title: "The Power of Boundaries",
-    excerpt:
-      "Why setting boundaries is vital for emotional and relational health.",
+    excerpt: "Why setting boundaries is vital for emotional and relational health.",
     mainImage: "https://picsum.photos/400/300?random=2",
     publishedAt: "2025-05-10",
   },
@@ -58,13 +58,26 @@ const mockPosts = [
   },
 ];
 
+// BlogPage component displays a grid of blog article previews
 const BlogPage = () => {
   return (
-    <Box id="blog" sx={{ backgroundColor: "#F5EFE6", py: 8, px: 2 }}>
-      <Box sx={{ maxWidth: "1200px", mx: "auto", textAlign: "center", mb: 6 }}>
+    <Box
+      id="blog"
+      sx={{ backgroundColor: "#F5EFE6", py: 8, px: 2 }}
+    >
+      {/* Page header */}
+      <Box
+        sx={{
+          maxWidth: "1200px",
+          mx: "auto",
+          textAlign: "center",
+          mb: 6,
+        }}
+      >
         <Typography
           variant="h1"
           sx={{ color: "#3F7C78", fontWeight: 600, mb: 2 }}
+          aria-label="Insights Blog section heading" 
         >
           Insights Blog
         </Typography>
@@ -73,21 +86,25 @@ const BlogPage = () => {
         </Typography>
       </Box>
 
+      {/* Grid layout for blog cards */}
       <Grid
         container
-        sx={{ maxWidth: 1200, mx: "auto", justifyContent: "center" }}
+        sx={{
+          maxWidth: 1200,
+          mx: "auto",
+          justifyContent: "center",
+        }}
       >
         {mockPosts.map((post, index) => (
           <Grid
             key={post._id}
             item
+            xs={12}
+            sm={6}
+            md={4} // !! Responsive: 3 columns on md+, 2 on sm, 1 on xs
             sx={{
-              flexBasis: "33.33%",
-              maxWidth: "33.33%",
-              paddingLeft: 2,
-              paddingRight: 2,
-              boxSizing: "border-box",
-              mb: index < 3 ? 3 : 0,
+              px: 2,
+              mb: 4,
             }}
           >
             <Card
@@ -99,24 +116,29 @@ const BlogPage = () => {
                 backgroundColor: "#FAF9F7",
               }}
               elevation={3}
+              role="article" 
             >
+              {/* Makes the entire card clickable and keyboard-navigable */}
               <CardActionArea
                 component={Link}
-                to="/blog/sample-post"
+                to="/blog/sample-post" // Will eventually use dynamic post.slug
                 sx={{
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "stretch",
                 }}
+                aria-label={`Read more about ${post.title}`} 
               >
+                {/* Post image with alt text for accessibility */}
                 <CardMedia
                   component="img"
                   image={post.mainImage}
-                  alt={post.title}
+                  alt={`Cover image for ${post.title}`} 
                   sx={{ height: 160, objectFit: "cover" }}
                 />
 
+                {/* Post content: title, excerpt, date, CTA */}
                 <CardContent
                   sx={{
                     flexGrow: 1,
@@ -127,6 +149,7 @@ const BlogPage = () => {
                   <Typography variant="h6" color="#D38775" gutterBottom>
                     {post.title}
                   </Typography>
+
                   <Typography
                     variant="body1"
                     color="#3A3A3A"
@@ -134,6 +157,7 @@ const BlogPage = () => {
                   >
                     {post.excerpt}
                   </Typography>
+
                   <Typography
                     variant="caption"
                     color="#3A3A3A"
@@ -146,6 +170,7 @@ const BlogPage = () => {
                     })}
                   </Typography>
 
+                  {/* "Read More" button inside card content */}
                   <Box sx={{ mt: 2 }}>
                     <Button
                       variant="outlined"
@@ -165,6 +190,7 @@ const BlogPage = () => {
                           borderColor: "#D38775",
                         },
                       }}
+                      aria-label={`Read more about ${post.title}`} 
                     >
                       Read More
                     </Button>

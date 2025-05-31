@@ -4,6 +4,7 @@ import { Box, Typography } from "@mui/material";
 const ServicesCard = ({ services }) => {
   return (
     <Box
+      aria-label="Card listing therapy services offered" 
       sx={{
         backgroundColor: "#FAF9F7",
         px: 2,
@@ -16,22 +17,34 @@ const ServicesCard = ({ services }) => {
     >
       <Typography
         variant="h3"
+        id="services-section-title"
         sx={{
           fontWeight: 600,
           color: "#D38775",
-          //fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1rem" },
         }}
       >
         Services Offered
       </Typography>
-      <Box sx={{ mt: 0.5, textAlign: "center"}}>
+
+      <Box
+        sx={{ mt: 0.5, textAlign: "center" }}
+        role="region" 
+        aria-labelledby="services-section-title"
+      >
         {services.map((item, idx) => (
           <Typography
             key={idx}
             variant="body1"
+            role="text" 
+            tabIndex={0} 
             sx={{ 
               color: "#3A3A3A", 
-              lineHeight: 1.6 
+              lineHeight: 1.6,
+              outline: "none", 
+              "&:focus": {
+                outline: "2px solid #3F7C78",
+                outlineOffset: "2px",
+              },
             }}
           >
             {item}

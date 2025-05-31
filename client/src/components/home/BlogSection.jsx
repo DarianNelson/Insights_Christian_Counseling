@@ -1,7 +1,17 @@
-import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+} from '@mui/material';
 import BlogPlaceHolder1 from '../../assets/images/Blog/blog1.png';
 import BlogPlaceHolder2 from '../../assets/images/Blog/blog2.jpg';
 
+// Sample blog data array
 const blogs = [
   {
     title: 'Faith and Mental Health',
@@ -15,25 +25,34 @@ const blogs = [
   },
 ];
 
+// Main component for displaying recent blog entries
 export default function BlogSection() {
   return (
-    <Box sx={{ backgroundColor: '#F5EFE6', py: 6 }}>
+    <Box
+      sx={{ backgroundColor: '#F5EFE6', py: 6 }}
+      component="section"
+      aria-labelledby="blog-section-heading" 
+    >
       <Container>
+        {/* Section heading */}
         <Typography
           variant="h3"
           color="#3F7C78"
           fontWeight="bold"
           textAlign="center"
+          id="blog-section-heading" 
           sx={{ mb: 4, fontSize: { xs: '2rem', md: '2.25rem' } }}
         >
           Recent Blog Articles
         </Typography>
 
+        {/* Responsive grid for blog cards */}
         <Grid container spacing={4} justifyContent="center">
           {blogs.map((blog, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card 
-                sx={{ 
+              {/* Each card represents a blog article */}
+              <Card
+                sx={{
                   backgroundColor: '#FAF9F7',
                   borderRadius: 3,
                   boxShadow: 2,
@@ -46,12 +65,15 @@ export default function BlogSection() {
                     boxShadow: 4,
                   },
                 }}
+                role="article" 
+                aria-label={`Blog article titled ${blog.title}`} 
               >
+                {/* Blog image with alt text */}
                 <CardMedia
                   component="img"
                   image={blog.image}
-                  alt={blog.title}
-                  sx={{ 
+                  alt={`Illustration for article: ${blog.title}`} 
+                  sx={{
                     height: 200,
                     width: '100%',
                     objectFit: 'cover',
@@ -59,13 +81,15 @@ export default function BlogSection() {
                     borderTopRightRadius: 12,
                   }}
                 />
-                <CardContent 
-                  sx={{ 
+
+                {/* Blog title and summary */}
+                <CardContent
+                  sx={{
                     flex: 1,
-                    display: 'flex', 
+                    display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    flexGrow: 1, 
+                    flexGrow: 1,
                   }}
                 >
                   <Box>
@@ -77,9 +101,11 @@ export default function BlogSection() {
                     </Typography>
                   </Box>
 
-                  <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}> 
-                    <Button 
+                  {/* "Read More" button */}
+                  <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                    <Button
                       size="large"
+                      aria-label={`Read more about ${blog.title}`} 
                       sx={{
                         color: '#D38775',
                         border: '1px solid #D38775',
@@ -87,8 +113,8 @@ export default function BlogSection() {
                         px: 3,
                         py: 1.5,
                         '&:hover': {
-                        backgroundColor: '#D38775',
-                        color: '#FAF9F7',
+                          backgroundColor: '#D38775',
+                          color: '#FAF9F7',
                         },
                       }}
                     >
@@ -101,21 +127,22 @@ export default function BlogSection() {
           ))}
         </Grid>
 
-        {/* Optional CTA button */}
+        {/* CTA button to view all blog posts */}
         <Box textAlign="center" mt={6}>
-          <Button 
+          <Button
             variant="outlined"
+            aria-label="View all blog posts" 
             sx={{
               color: '#3F7C78',
               border: '2px solid #3F7C78',
               borderRadius: '50px',
-              px: 4, 
+              px: 4,
               py: 1.5,
               fontWeight: 'bold',
               '&:hover': {
                 backgroundColor: '#3F7C78',
                 color: '#FAF9F7',
-              }
+              },
             }}
           >
             View All Posts

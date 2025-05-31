@@ -1,4 +1,6 @@
-// data/recommendedBooks.js
+// This file exports an array of recommended books for mental health and emotional well-being.
+// The data is used in the <BookList /> component, which maps over this array to display a list of clickable resources.
+
 const recommendedBooks = [
   {
     title: "Adult Children of Emotionally Immature Parents",
@@ -85,12 +87,12 @@ const recommendedBooks = [
     author: "Jennie Allen",
     link: "https://a.co/d/3qq2FSy",
   },
-//  {
-//     title: "",
-//     author: "",
-//     link: "",
-//   },
-
+  // Template for adding more books:
+  // {
+  //   title: "",
+  //   author: "",
+  //   link: "",
+  // },
 ];
 
 export default recommendedBooks;

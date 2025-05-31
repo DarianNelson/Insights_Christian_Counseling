@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
+// List of services offered (can be updated in one place)
 const services = [
   'Anxiety',
   'Trauma',
@@ -11,26 +12,35 @@ const services = [
   'Adjustment Disorder',
 ];
 
+// ServicesSection component: displays a stylized list of services with hover effects
 export default function ServicesSection() {
   return (
-    <Box sx={{ 
-      backgroundColor: '#F5EFE6', 
-      py: { xs: 4, md: 5 },
-      mt: 0, 
-    }}>
-
-      {/* Title above the card */}
+    <Box
+      component="section"
+      aria-labelledby="services" 
+      sx={{
+        backgroundColor: '#F5EFE6',
+        py: { xs: 4, md: 5 }, // Responsive vertical padding
+        mt: 0,
+      }}
+    >
+      {/* Section heading */}
       <Typography
-        id="services"
+        id="services" 
         variant="h2"
         fontWeight="bold"
         color="#3F7C78"
-        sx={{ mt: 0,mb: 2, textAlign:'center', fontSize: { xs: '2rem', md: '2.25rem' } //trying manual font sizing
-      }}>
+        sx={{
+          mt: 0,
+          mb: 2,
+          textAlign: 'center',
+          fontSize: { xs: '2rem', md: '2.25rem' }, // Responsive font sizing
+        }}
+      >
         Services We Offer
       </Typography>
 
-      {/* Content container */}
+      {/* Card-style container for the services list */}
       <Box
         sx={{
           backgroundColor: '#FFF',
@@ -39,28 +49,40 @@ export default function ServicesSection() {
           maxWidth: '95%',
           mx: 'auto',
           py: 2,
-          px: { xs: 2, sm: 4 },
+          px: { xs: 2, sm: 4 }, // Responsive horizontal padding
           textAlign: 'center',
         }}
       >
+        {/* Service items displayed in a horizontal wrap layout */}
         <Typography
           variant="h6"
           color="#3A3A3A"
+          role="list" 
           sx={{
             fontWeight: 500,
-            fontSize: { xs: '1.1rem', sm: '1.4rem', md: '1.6rem' },
+            fontSize: { xs: '1.1rem', sm: '1.4rem', md: '1.6rem' }, // Responsive font sizing
             display: 'flex',
             justifyContent: 'center',
             flexWrap: 'wrap',
             gap: 1,
           }}
         >
+          {/* Render each service as a visually styled span with hover effects */}
           {services.map((service, index) => (
             <span
               key={index}
+              role="listitem"
+              tabIndex={0} 
               style={{
                 transition: 'transform 0.2s ease, color 0.2s ease',
                 cursor: 'default',
+                outline: 'none',
+              }}
+              onFocus={(e) => {
+                e.target.style.outline = '2px solid #3F7C78'; 
+              }}
+              onBlur={(e) => {
+                e.target.style.outline = 'none';
               }}
               onMouseEnter={(e) => {
                 e.target.style.transform = 'scale(1.05)';
@@ -72,6 +94,7 @@ export default function ServicesSection() {
               }}
             >
               {service}
+              {/* Add a bullet between services except after the last one */}
               {index < services.length - 1 && <>&nbsp;&middot;&nbsp;</>}
             </span>
           ))}

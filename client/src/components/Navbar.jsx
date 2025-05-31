@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom"; // <-- import hooks
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -17,6 +17,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/images/Logo/Insights_Logo.PNG";
 
+// Array of navigation items with their routes
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
@@ -27,14 +28,14 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false); // For mobile menu drawer
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md")); // Responsive trigger
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Custom handler for logo and home button click
+  // Handles Home button or logo click
   const handleHomeClick = (event) => {
     event.preventDefault();
     if (location.pathname === "/") {
@@ -42,12 +43,15 @@ const Navbar = () => {
     } else {
       navigate("/");
     }
-    setDrawerOpen(false); // close drawer if mobile
+    setDrawerOpen(false); // Close mobile drawer if open
   };
 
   return (
     <>
+      {/* Top-level navigation bar */}
       <AppBar
+        component="nav" 
+        aria-label="Main site navigation" 
         position="sticky"
         sx={{
           backgroundColor: "#F5EFE6",
@@ -56,7 +60,7 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          {/* Logo with click handler */}
+          {/* Logo linking to home */}
           <Box
             component="a"
             href="/"
@@ -67,26 +71,27 @@ const Navbar = () => {
               textDecoration: "none",
               cursor: "pointer",
             }}
+            aria-label="Go to homepage"
           >
             <Box
               component="img"
               src={Logo}
-              alt="Insights Logo"
+              alt="Insights Christian Counseling logo" 
               sx={{
-                height: { xs: 40, md: 70 }, // 40px on mobile, 70px on medium+ screens
+                height: { xs: 40, md: 70 }, // Responsive sizing
               }}
             />
           </Box>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation Menu */}
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 2 }}>
               {navItems.map((item) =>
                 item.to === "/" ? (
-                  // For Home button, use same click handler
                   <Button
                     key={item.to}
                     onClick={handleHomeClick}
+                    aria-label="Home" 
                     sx={{
                       color: "#3A3A3A",
                       fontSize: "1.1rem",
@@ -104,6 +109,7 @@ const Navbar = () => {
                     key={item.to}
                     component="a"
                     href={item.to}
+                    aria-label={`Go to ${item.label}`} 
                     sx={{
                       color: "#3A3A3A",
                       fontSize: "1.1rem",
@@ -121,6 +127,7 @@ const Navbar = () => {
                     key={item.to}
                     component={Link}
                     to={item.to}
+                    aria-label={`Go to ${item.label}`} 
                     sx={{
                       color: "#3A3A3A",
                       fontSize: "1.1rem",
@@ -138,14 +145,14 @@ const Navbar = () => {
             </Box>
           )}
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Icon */}
           {isMobile && (
             <IconButton
               edge="end"
               color="inherit"
               onClick={() => setDrawerOpen(true)}
               sx={{ color: "#3A3A3A" }}
-              aria-label="menu"
+              aria-label="Open menu" 
             >
               <MenuIcon />
             </IconButton>
@@ -153,13 +160,14 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Drawer for Mobile Nav */}
+      {/* Mobile Drawer Menu */}
       <Drawer
         anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
+        aria-label="Mobile navigation menu" 
         ModalProps={{
-          keepMounted: true, // Improves performance on mobile
+          keepMounted: true, // Keeps drawer in the DOM when closed to improve performance and preserve state on mobile
         }}
         PaperProps={{
           sx: {
@@ -170,26 +178,41 @@ const Navbar = () => {
           },
         }}
       >
-        <Box role="presentation" onClick={() => setDrawerOpen(false)}>
+        <Box
+          role="presentation"
+          onClick={() => setDrawerOpen(false)}
+          aria-label="Navigation drawer content" 
+        >
           <List>
             {navItems.map((item) => (
               <ListItem key={item.to} disablePadding>
                 {item.to === "/" ? (
-                  <ListItemButton onClick={handleHomeClick}>
+                  <ListItemButton
+                    onClick={handleHomeClick}
+                    aria-label="Home" 
+                  >
                     <ListItemText
                       primary={item.label}
                       sx={{ color: "#3A3A3A" }}
                     />
                   </ListItemButton>
                 ) : item.to.startsWith("/#") ? (
-                  <ListItemButton component="a" href={item.to}>
+                  <ListItemButton
+                    component="a"
+                    href={item.to}
+                    aria-label={`Go to ${item.label}`} 
+                  >
                     <ListItemText
                       primary={item.label}
                       sx={{ color: "#3A3A3A" }}
                     />
                   </ListItemButton>
                 ) : (
-                  <ListItemButton component={Link} to={item.to}>
+                  <ListItemButton
+                    component={Link}
+                    to={item.to}
+                    aria-label={`Go to ${item.label}`} 
+                  >
                     <ListItemText
                       primary={item.label}
                       sx={{ color: "#3A3A3A" }}

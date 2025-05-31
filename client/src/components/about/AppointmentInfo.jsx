@@ -1,5 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Button, Grid } from "@mui/material";
+
+// Image imports
 import CompassionImg from "../../assets/images/About/compassion.jpg";
 import ConnectImg from "../../assets/images/About/connect.jpg";
 import FaithImg from "../../assets/images/About/faith.jpg";
@@ -8,20 +10,25 @@ import LookingImg from "../../assets/images/About/looking_ahead.jpg";
 import StoryImg from "../../assets/images/About/story.jpg";
 import TimeImg from "../../assets/images/About/time.jpg";
 import FirstAptImg from "../../assets/images/About/first_appointment.jpg";
+
+// Reusable card component for each info section
 const SectionCard = ({ title, text, imgSrc }) => (
   <Box sx={{ backgroundColor: "#FAF9F7", borderRadius: 2, p: 4, mb: 6 }}>
     <Grid
       container
       spacing={4}
-      alignItems="flex-start" // align top of image and text
-      sx={{ flexWrap: { xs: "wrap", sm: "nowrap" } }} // force side-by-side on sm+
+      alignItems="flex-start"
+      sx={{ flexWrap: { xs: "wrap", sm: "nowrap" } }}
+      role="region"
+      aria-labelledby={title.replace(/\s/g, "-").toLowerCase()}
     >
+      {/* Image section */}
       {imgSrc && (
         <Grid item xs={12} sm={4} sx={{ flexShrink: 0 }}>
           <Box
             component="img"
             src={imgSrc}
-            alt={title}
+            alt={`${title} illustration`}
             sx={{
               width: 200,
               height: 200,
@@ -34,8 +41,10 @@ const SectionCard = ({ title, text, imgSrc }) => (
         </Grid>
       )}
 
+      {/* Text section */}
       <Grid item xs={12} sm={8}>
         <Typography
+          id={title.replace(/\s/g, "-").toLowerCase()}
           variant="h3"
           gutterBottom
           sx={{ color: "#D38775", fontWeight: 600 }}
@@ -49,12 +58,15 @@ const SectionCard = ({ title, text, imgSrc }) => (
     </Grid>
   </Box>
 );
+
+// Main component
 const AppointmentInfo = () => {
   return (
     <>
-      {/* Hero image section */}
+      {/* HERO SECTION: Background image with intro */}
       <Box
         id="first-appointment"
+        aria-label="Introductory information about your first appointment"
         sx={{
           backgroundImage: `url('${FirstAptImg}')`,
           backgroundSize: "cover",
@@ -63,10 +75,10 @@ const AppointmentInfo = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: { xs: 280, md: 340 }, // Reduce vertical space
+          height: { xs: 280, md: 340 },
           px: 2,
           mb: 0,
-          py: { xs: 4, md: 6 }, // Less vertical padding
+          py: { xs: 4, md: 6 },
           textAlign: "center",
           color: "#3A3A3A",
         }}
@@ -108,7 +120,7 @@ const AppointmentInfo = () => {
         </Box>
       </Box>
 
-      {/* Info cards section */}
+      {/* MAIN INFO SECTION: Appointment details */}
       <Box sx={{ backgroundColor: "#BFDAD5", py: 6, mt: 0 }}>
         <Container maxWidth="md">
           <SectionCard
@@ -133,8 +145,7 @@ const AppointmentInfo = () => {
           />
           <SectionCard
             title="Clinical Insight with Compassion"
-            text="We specialize in working with anxiety, trauma, and OCD. The symptom questionnaires you complete beforehand help guide our discussion and ensure we’re aligned with your needs from the beginning. But first and foremost, you are a person—not a diagnosis.
-eceive guidance rooted in both clinical expertise and genuine care. We approach every story with compassion, helping you move toward healing at your own pace."
+            text="We specialize in working with anxiety, trauma, and OCD. The symptom questionnaires you complete beforehand help guide our discussion and ensure we’re aligned with your needs from the beginning. But first and foremost, you are a person—not a diagnosis."
             imgSrc={CompassionImg}
           />
           <SectionCard
@@ -144,7 +155,9 @@ eceive guidance rooted in both clinical expertise and genuine care. We approach 
           />
         </Container>
 
+        {/* FINAL CTA SECTION: Background image with button */}
         <Box
+          aria-label="Final call to action: Schedule an appointment"
           sx={{
             position: "relative",
             backgroundImage: `url('${StoryImg}')`,
@@ -162,17 +175,17 @@ eceive guidance rooted in both clinical expertise and genuine care. We approach 
             overflow: "hidden",
           }}
         >
-          {/* Soft overlay like the About hero */}
+          {/* Dark overlay */}
           <Box
             sx={{
               position: "absolute",
               inset: 0,
-              bgcolor: "rgba(58, 58, 58, 0.25)", // Deep Charcoal with 60% opacity
+              bgcolor: "rgba(58, 58, 58, 0.25)",
               zIndex: 1,
             }}
           />
 
-          {/* Text content */}
+          {/* Text and CTA */}
           <Box
             sx={{
               position: "relative",
@@ -202,15 +215,17 @@ eceive guidance rooted in both clinical expertise and genuine care. We approach 
                 mb: 3,
               }}
             >
-              We are honored to walk alongiside you as you begin your journey.
+              We are honored to walk alongside you as you begin your journey.
             </Typography>
 
+            {/* Accessible external link styled as a button */}
             <Button
               variant="contained"
               component="a"
               href="https://your-hushmail-form-link.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Schedule an appointment via Hushmail"
               sx={{
                 backgroundColor: "#E89072",
                 color: "#fff",
@@ -218,7 +233,7 @@ eceive guidance rooted in both clinical expertise and genuine care. We approach 
                 px: 4,
                 py: 1.5,
                 fontSize: "1.5rem",
-                borderRadius: "999px", // pill shape
+                borderRadius: "999px",
                 textTransform: "none",
                 "&:hover": {
                   backgroundColor: "#d87b5f",
