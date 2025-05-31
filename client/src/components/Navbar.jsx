@@ -17,25 +17,28 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/images/Logo/Insights_Logo.PNG";
 
-// Array of navigation items with their routes
+// Navigation items with routes or external links
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/#resources", label: "Resources" },
   { to: "/blog", label: "Blog" },
   { to: "/#contact", label: "Contact" },
-  { to: "/portal", label: "Client Portal" },
+  {
+    to: "https://your-practice.clientsecure.me", // Replace with the actual portal URL
+    label: "Client Portal",
+    external: true,
+  },
 ];
 
 const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false); // For mobile menu drawer
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md")); // Responsive trigger
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Handles Home button or logo click
   const handleHomeClick = (event) => {
     event.preventDefault();
     if (location.pathname === "/") {
@@ -43,15 +46,14 @@ const Navbar = () => {
     } else {
       navigate("/");
     }
-    setDrawerOpen(false); // Close mobile drawer if open
+    setDrawerOpen(false);
   };
 
   return (
     <>
-      {/* Top-level navigation bar */}
       <AppBar
-        component="nav" 
-        aria-label="Main site navigation" 
+        component="nav"
+        aria-label="Main site navigation"
         position="sticky"
         sx={{
           backgroundColor: "#F5EFE6",
@@ -60,7 +62,7 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          {/* Logo linking to home */}
+          {/* Logo */}
           <Box
             component="a"
             href="/"
@@ -76,22 +78,42 @@ const Navbar = () => {
             <Box
               component="img"
               src={Logo}
-              alt="Insights Christian Counseling logo" 
+              alt="Insights Christian Counseling logo"
               sx={{
-                height: { xs: 40, md: 70 }, // Responsive sizing
+                height: { xs: 40, md: 70 },
               }}
             />
           </Box>
 
-          {/* Desktop Navigation Menu */}
+          {/* Desktop Navigation */}
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 2 }}>
               {navItems.map((item) =>
-                item.to === "/" ? (
+                item.external ? (
+                  <Button
+                    key={item.to}
+                    component="a"
+                    href={item.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Go to ${item.label}`}
+                    sx={{
+                      color: "#3A3A3A",
+                      fontSize: "1.1rem",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "#E89072",
+                        color: "#FFFFFF",
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                ) : item.to === "/" ? (
                   <Button
                     key={item.to}
                     onClick={handleHomeClick}
-                    aria-label="Home" 
+                    aria-label="Home"
                     sx={{
                       color: "#3A3A3A",
                       fontSize: "1.1rem",
@@ -109,7 +131,7 @@ const Navbar = () => {
                     key={item.to}
                     component="a"
                     href={item.to}
-                    aria-label={`Go to ${item.label}`} 
+                    aria-label={`Go to ${item.label}`}
                     sx={{
                       color: "#3A3A3A",
                       fontSize: "1.1rem",
@@ -127,7 +149,7 @@ const Navbar = () => {
                     key={item.to}
                     component={Link}
                     to={item.to}
-                    aria-label={`Go to ${item.label}`} 
+                    aria-label={`Go to ${item.label}`}
                     sx={{
                       color: "#3A3A3A",
                       fontSize: "1.1rem",
@@ -152,7 +174,7 @@ const Navbar = () => {
               color="inherit"
               onClick={() => setDrawerOpen(true)}
               sx={{ color: "#3A3A3A" }}
-              aria-label="Open menu" 
+              aria-label="Open menu"
             >
               <MenuIcon />
             </IconButton>
@@ -165,10 +187,8 @@ const Navbar = () => {
         anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        aria-label="Mobile navigation menu" 
-        ModalProps={{
-          keepMounted: true, // Keeps drawer in the DOM when closed to improve performance and preserve state on mobile
-        }}
+        aria-label="Mobile navigation menu"
+        ModalProps={{ keepMounted: true }}
         PaperProps={{
           sx: {
             backgroundColor: "#F5EFE6",
@@ -181,42 +201,40 @@ const Navbar = () => {
         <Box
           role="presentation"
           onClick={() => setDrawerOpen(false)}
-          aria-label="Navigation drawer content" 
+          aria-label="Navigation drawer content"
         >
           <List>
             {navItems.map((item) => (
               <ListItem key={item.to} disablePadding>
-                {item.to === "/" ? (
+                {item.external ? (
                   <ListItemButton
-                    onClick={handleHomeClick}
-                    aria-label="Home" 
+                    component="a"
+                    href={item.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Go to ${item.label}`}
                   >
-                    <ListItemText
-                      primary={item.label}
-                      sx={{ color: "#3A3A3A" }}
-                    />
+                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
+                  </ListItemButton>
+                ) : item.to === "/" ? (
+                  <ListItemButton onClick={handleHomeClick} aria-label="Home">
+                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
                   </ListItemButton>
                 ) : item.to.startsWith("/#") ? (
                   <ListItemButton
                     component="a"
                     href={item.to}
-                    aria-label={`Go to ${item.label}`} 
+                    aria-label={`Go to ${item.label}`}
                   >
-                    <ListItemText
-                      primary={item.label}
-                      sx={{ color: "#3A3A3A" }}
-                    />
+                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
                   </ListItemButton>
                 ) : (
                   <ListItemButton
                     component={Link}
                     to={item.to}
-                    aria-label={`Go to ${item.label}`} 
+                    aria-label={`Go to ${item.label}`}
                   >
-                    <ListItemText
-                      primary={item.label}
-                      sx={{ color: "#3A3A3A" }}
-                    />
+                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
                   </ListItemButton>
                 )}
               </ListItem>
