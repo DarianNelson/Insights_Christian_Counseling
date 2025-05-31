@@ -167,7 +167,7 @@ eceive guidance rooted in both clinical expertise and genuine care. We approach 
             sx={{
               position: "absolute",
               inset: 0,
-              bgcolor: 'rgba(58, 58, 58, 0.25)', // Deep Charcoal with 60% opacity
+              bgcolor: "rgba(58, 58, 58, 0.25)", // Deep Charcoal with 60% opacity
               zIndex: 1,
             }}
           />
@@ -207,6 +207,10 @@ eceive guidance rooted in both clinical expertise and genuine care. We approach 
 
             <Button
               variant="contained"
+              component="a"
+              href="https://your-hushmail-form-link.com"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 backgroundColor: "#E89072",
                 color: "#fff",

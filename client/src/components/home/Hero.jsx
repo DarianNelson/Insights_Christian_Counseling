@@ -66,6 +66,10 @@ const Hero = () => {
 
         <Button
           variant="contained"
+          component="a"
+          href="https://your-hushmail-form-link.com"
+          target="_blank"
+          rel="noopener noreferrer"
           color="secondary"
           sx={{
             mt: 6,

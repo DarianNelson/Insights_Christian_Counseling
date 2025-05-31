@@ -22,20 +22,22 @@ const ContactSection = () => {
   return (
     <Box sx={{ p: 4, maxWidth: "1200px", mx: "auto" }}>
       <Typography
-          id="contact"
-          variant="h2"
-          textAlign="center"
-          fontWeight="bold"
-          color="#3F7C78"
-          sx={{ mb: 4, fontSize: { xs: '2rem', md: '2.25rem' } }} //trying manual font sizing
-        >
-          Contact Our Office
-        </Typography>
+        id="contact"
+        variant="h2"
+        textAlign="center"
+        fontWeight="bold"
+        color="#3F7C78"
+        sx={{ mb: 4, fontSize: { xs: "2rem", md: "2.25rem" } }} //trying manual font sizing
+      >
+        Contact Our Office
+      </Typography>
       <Grid container spacing={4}>
-        {/* Left side - Hushmail form */}
-<Grid item xs={12} md={6}>
-  <HushmailForm />
-</Grid>
+
+        {/* Left side - Embedded Hushmail Form */}
+        {/* <Grid item xs={12} md={6}>
+          <HushmailForm />
+        </Grid> */}
+
         {/* Right side - Contact info card */}
         <Grid item xs={12} md={6}>
           <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
@@ -76,11 +78,18 @@ const ContactSection = () => {
                 Directions From Pass Road
               </Typography>
               <Typography mb={2} variant="body1" color="text.primary">
-                Head south on Courthouse Rd. Continue past the railroad tracks, <br />
-                and our office will be on your left, just after the railroad tracks.
+                Head south on Courthouse Rd. Continue past the railroad tracks,{" "}
+                <br />
+                and our office will be on your left, just after the railroad
+                tracks.
               </Typography>
 
-              <Typography mb={2} variant="body1" color="#D38775" fontWeight="italic">
+              <Typography
+                mb={2}
+                variant="body1"
+                color="#D38775"
+                fontWeight="italic"
+              >
                 Parking is available to the side and behind the building.
               </Typography>
 

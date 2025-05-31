@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom"; // <-- import hooks
 import {
   AppBar,
   Toolbar,
@@ -31,6 +31,20 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Custom handler for logo and home button click
+  const handleHomeClick = (event) => {
+    event.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+    setDrawerOpen(false); // close drawer if mobile
+  };
+
   return (
     <>
       <AppBar
@@ -42,24 +56,50 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          {/* Logo */}
+          {/* Logo with click handler */}
           <Box
-            component={Link}
-            to="/"
+            component="a"
+            href="/"
+            onClick={handleHomeClick}
             sx={{
               display: "flex",
               alignItems: "center",
               textDecoration: "none",
+              cursor: "pointer",
             }}
           >
-            <img src={Logo} alt="Insights Logo" style={{ height: "40px" }} />
+            <Box
+              component="img"
+              src={Logo}
+              alt="Insights Logo"
+              sx={{
+                height: { xs: 40, md: 70 }, // 40px on mobile, 70px on medium+ screens
+              }}
+            />
           </Box>
 
           {/* Desktop Nav */}
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 2 }}>
               {navItems.map((item) =>
-                item.to.startsWith("/#") ? (
+                item.to === "/" ? (
+                  // For Home button, use same click handler
+                  <Button
+                    key={item.to}
+                    onClick={handleHomeClick}
+                    sx={{
+                      color: "#3A3A3A",
+                      fontSize: "1.1rem",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "#E89072",
+                        color: "#FFFFFF",
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                ) : item.to.startsWith("/#") ? (
                   <Button
                     key={item.to}
                     component="a"
@@ -130,14 +170,18 @@ const Navbar = () => {
           },
         }}
       >
-        <Box
-          role="presentation"
-          onClick={() => setDrawerOpen(false)}
-        >
+        <Box role="presentation" onClick={() => setDrawerOpen(false)}>
           <List>
             {navItems.map((item) => (
               <ListItem key={item.to} disablePadding>
-                {item.to.startsWith("/#") ? (
+                {item.to === "/" ? (
+                  <ListItemButton onClick={handleHomeClick}>
+                    <ListItemText
+                      primary={item.label}
+                      sx={{ color: "#3A3A3A" }}
+                    />
+                  </ListItemButton>
+                ) : item.to.startsWith("/#") ? (
                   <ListItemButton component="a" href={item.to}>
                     <ListItemText
                       primary={item.label}

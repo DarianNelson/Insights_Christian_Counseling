@@ -4,6 +4,7 @@ export const therapistsData = [
 
   {
     name: "Lisa Parsons, LCSW",
+    slug: "lisa-parsons",
     credentials: "Licensed Professional Counselor",
     license: "MS License #9311",
     affiliation: "Member in good standing with the American Association of Christian Counselors",
@@ -16,6 +17,7 @@ export const therapistsData = [
       "In 2018, I began subcontracting with Safe Harbor Clinic in Long Beach, Mississippi. There, I refined my areas of focus and earned certifications in treating anxiety disorders, trauma, and providing telehealth services.",
       "In 2023, I opened my own private practice in Gulfport. As a faith-based therapist, I provide evidence-based care rooted in compassion and guided by spiritual values. I continue to pursue ongoing training in trauma and anxiety treatment, offering a safe, grace-filled space for clients to grow and heal."
     ],
+    intro: "Lisa is a faith-based therapist specializing in trauma and anxiety, Lisa combines clinical expertise with compassionate, values-driven care. She is passionate about walking alongside clients as they seek healing, peace, and renewed purpose through evidence-based care and spiritual support.",
     specialties: [
       "Anxiety", 
       "Depression", 
@@ -58,6 +60,7 @@ export const therapistsData = [
   },
   {
     name: "Amanda Whichard, NCC, LPC, LPC/MHSP",
+    slug: "amanda-whichard",
     credentials: "Licensed Professional Counselor",
     license: "MS License TBD · TN License #5462",
     photo: AmandaHeadshot,
@@ -69,6 +72,7 @@ export const therapistsData = [
       "I’m a licensed professional counselor (LPC-MHSP) with a Master of Science in Counselor Education from William Carey University. One of my guiding beliefs is that “it’s never too late to make a change.” That mindset has shaped my own path—from a previous career in business to a long-standing calling to walk alongside others in their healing.",
       "After graduation and beginning my counseling work here along the Gulf Coast, I've spent the past several years practicing in Tennessee. Now, I’m grateful to be back in this community and to have joined Insights Christian Counseling. If you’re ready to move beyond survival mode and toward peace, purpose, and freedom, I invite you to reach out. You don’t have to carry this alone—we can take the next steps together.",
     ],
+    intro: "Amanda is a faith-sensitive therapist specializing in anxiety, OCD, and trauma. Amanda strives to create a warm, supportive space where clients feel heard, understood, and empowered to pursue lasting peace and personal growth using evidenced-based treatments.",
     specialties: [
       "Anxiety", 
       "Depression", 

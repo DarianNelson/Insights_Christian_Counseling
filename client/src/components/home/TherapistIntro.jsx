@@ -1,20 +1,5 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
-import LisaHeadshot from '../../assets/images/Headshots/Lisa.png';
-import HeadshotPlaceHolder from '../../assets/images/Headshots/placeholder.jpg';
-
-const therapists = [
-  {
-    name: 'Lisa Parsons, LCSW',
-    image: LisaHeadshot,
-    description:
-      'Lisa is a faith-based therapist specializing in trauma and anxiety, Lisa combines clinical expertise with compassionate, values-driven care. She is passionate about walking alongside clients as they seek healing, peace, and renewed purpose through evidence-based care and spiritual support.',
-  },
-  {
-    name: 'Amanda Whichard, LPC–MHSP TN',
-    description:
-      'Amanda is a faith-sensitive therapist specializing in anxiety, OCD, and trauma. Amanda strives to create a warm, supportive space where clients feel heard, understood, and empowered to pursue lasting peace and personal growth using evidenced-based treatments.',
-  },
-];
+import { therapistsData } from '../../data/therapists';
 
 export default function TherapistsSection() {
   return (
@@ -38,8 +23,8 @@ export default function TherapistsSection() {
         </Typography>
 
         <Grid container spacing={3} justifyContent="center"> {/* reduced spacing */}
-          {therapists.map((t, index) => (
-            <Grid item xs={12} md={6} key={index}>
+          {therapistsData.map((t) => (
+            <Grid item xs={12} md={6} key={t.slug}>
               <Card
                 sx={{
                   p: 2,
@@ -54,7 +39,7 @@ export default function TherapistsSection() {
               >
                 <CardMedia
                   component="img"
-                  image={t.image || HeadshotPlaceHolder}
+                  image={t.photo}
                   alt={`Photo of ${t.name}`}
                   sx={{
                     width: { xs: 200, md: 150 },
@@ -85,12 +70,13 @@ export default function TherapistsSection() {
                       {t.name}
                     </Typography>
                     <Typography variant="body1" sx={{ my: 1 }}>
-                      {t.description}
+                      {t.intro}
                     </Typography>
                   </Box>
 
                   <Button
                     size="large"
+                    href={`/about#${t.slug}`}
                     sx={{
                       mt: { xs: 2, md: 0 },
                       color: '#D38775',

@@ -13,7 +13,10 @@ import FeesInsuranceCard from "./FeesInsuranceCard";
 
 const TherapistCard = ({ therapist }) => {
   return (
-    <Box sx={{ maxWidth: 1080, mx: "auto", px: { xs: 2, md: 3 }, mb: 6 }}>
+    <Box
+      id={therapist.slug} // 👈 this enables in-page linking
+      sx={{ maxWidth: 1080, mx: "auto", px: { xs: 2, md: 3 }, mb: 6 }}
+    >
       {/* Top Grid: Headshot + Specialties (left) and Bio (right) */}
       <Box
         sx={{
@@ -61,7 +64,12 @@ const TherapistCard = ({ therapist }) => {
           sx={{ backgroundColor: "#FAF9F7", borderRadius: 4, boxShadow: 2 }}
         >
           <CardContent sx={{ px: 3, py: 3 }}>
-            <Typography variant="h3" color="#3F7C78" sx={{ mb: 1 }}>
+            <Typography
+              id="therapist.slug"
+              variant="h3"
+              color="#3F7C78"
+              sx={{ mb: 1 }}
+            >
               {therapist.name}
             </Typography>
 
@@ -115,9 +123,10 @@ const TherapistCard = ({ therapist }) => {
 
               <Button
                 size="medium"
-                onClick={() =>
-                  window.open("https://your-hushmail-form-link.com", "_blank")
-                }
+                component="a"
+                href="https://your-hushmail-form-link.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   color: "#D38775",
                   border: "1px solid #D38775",
