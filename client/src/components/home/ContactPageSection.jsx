@@ -34,9 +34,9 @@ const ContactSection = () => {
 
       <Grid container spacing={4}>
         {/* Left column: Hushmail contact form */}
-        {/* <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6}>
           <HushmailForm /> 
-        </Grid> */}
+        </Grid>
 
         {/* Right column: Contact info, directions, map, and map links */}
         <Grid item xs={12} md={6}>

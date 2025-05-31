@@ -1,3 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Uncomment this line when you add your sitemap later:
+# Sitemap: https://insightschristiancounseling.com/sitemap.xml
