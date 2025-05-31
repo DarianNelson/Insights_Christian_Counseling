@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import RoomIcon from "@mui/icons-material/Room"; // Location icon
 import PhoneIcon from "@mui/icons-material/Phone";
+import HushmailForm from "../contact/HushmailForm";
 
 const ContactSection = () => {
   // URLs for the maps
@@ -32,21 +33,9 @@ const ContactSection = () => {
         </Typography>
       <Grid container spacing={4}>
         {/* Left side - Hushmail form */}
-        <Grid item xs={12} md={6}>
-          <Box
-            component="iframe"
-            src="https://your-hushmail-embed-url" // Replace with the embedded form URL
-            title="Contact Form"
-            width="100%"
-            height="500px"
-            sx={{
-              border: "none",
-              borderRadius: 2,
-              boxShadow: 3,
-            }}
-          />
-        </Grid>
-
+<Grid item xs={12} md={6}>
+  <HushmailForm />
+</Grid>
         {/* Right side - Contact info card */}
         <Grid item xs={12} md={6}>
           <Card sx={{ boxShadow: 3, borderRadius: 2 }}>

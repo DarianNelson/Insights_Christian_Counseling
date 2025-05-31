@@ -4,6 +4,7 @@ import Logo from "../assets/images/Logo/Insights_Logo.PNG";
 const Footer = () => {
   return (
     <Box
+      id = "footer"
       sx={{
         backgroundColor: "#FAF9F7",
         color: "#3A3A3A",

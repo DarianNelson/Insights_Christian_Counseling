@@ -5,6 +5,7 @@ import AboutHeroImg from "../../assets/images/About/about_hero.jpg";
 const AboutIntro = () => {
   return (
     <Box
+      id = "aboutIntro"
       sx={{
         position: "relative",
         backgroundImage: `url(${AboutHeroImg})`,
@@ -22,6 +23,7 @@ const AboutIntro = () => {
     >
       {/* Overlay */}
       <Box
+        id="aboutIntroOverlay"
         sx={{
           position: "absolute",
           inset: 0,
@@ -31,7 +33,7 @@ const AboutIntro = () => {
       />
 
       {/* Content */}
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+      <Container id="aboutIntroContent" maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
         <Box
           sx={{
             backgroundColor: "rgba(0, 0, 0, 0.3)",

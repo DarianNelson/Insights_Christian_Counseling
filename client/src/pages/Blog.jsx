@@ -60,7 +60,7 @@ const mockPosts = [
 
 const BlogPage = () => {
   return (
-    <Box sx={{ backgroundColor: "#F5EFE6", py: 8, px: 2 }}>
+    <Box id="blog" sx={{ backgroundColor: "#F5EFE6", py: 8, px: 2 }}>
       <Box sx={{ maxWidth: "1200px", mx: "auto", textAlign: "center", mb: 6 }}>
         <Typography
           variant="h1"

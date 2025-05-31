@@ -6,7 +6,7 @@ import AppointmentInfo from '../components/about/AppointmentInfo';
 
 const About = () => {
   return (
-    <Box sx={{ backgroundColor: '#F5EFE6', pb: 0 }}>
+    <Box id="about" sx={{ backgroundColor: '#F5EFE6', pb: 0 }}>
       <AboutIntro />
 
       <Box

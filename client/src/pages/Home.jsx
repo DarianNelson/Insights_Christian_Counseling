@@ -25,7 +25,7 @@ const Home = () => {
   }, [location]);
 
   return (
-    <Box sx={{ backgroundColor: "#F5EFE6" }}>
+    <Box component ="main" sx={{ backgroundColor: "#F5EFE6" }}>
       {" "}
       {/* Sandy Beige background */}
       <Hero />
