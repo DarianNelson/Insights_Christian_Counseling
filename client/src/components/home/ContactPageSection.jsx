@@ -33,10 +33,10 @@ const ContactSection = () => {
       </Typography>
       <Grid container spacing={4}>
 
-        {/* Left side - Embedded Hushmail Form */}
-        {/* <Grid item xs={12} md={6}>
+        {/* Left side - Embedded Hushmail Form */} 
+        <Grid item xs={12} md={6}>
           <HushmailForm />
-        </Grid> */}
+        </Grid>
 
         {/* Right side - Contact info card */}
         <Grid item xs={12} md={6}>
