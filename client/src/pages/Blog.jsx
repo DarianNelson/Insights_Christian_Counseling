@@ -89,10 +89,11 @@ const BlogPage = () => {
       {/* Grid layout for blog cards */}
       <Grid
         container
+        spacing={4}
         sx={{
           maxWidth: 1200,
           mx: "auto",
-          justifyContent: "center",
+          justifyContent: "flex-start",
         }}
       >
         {mockPosts.map((post, index) => (
@@ -102,10 +103,6 @@ const BlogPage = () => {
             xs={12}
             sm={6}
             md={4} // !! Responsive: 3 columns on md+, 2 on sm, 1 on xs
-            sx={{
-              px: 2,
-              mb: 4,
-            }}
           >
             <Card
               sx={{
