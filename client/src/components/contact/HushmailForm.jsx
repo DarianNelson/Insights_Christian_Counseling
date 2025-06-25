@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Box, Typography, Card } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 // HushmailForm component embeds a secure third-party contact form using Hushmail
 const HushmailForm = () => {
@@ -13,21 +13,29 @@ const HushmailForm = () => {
 
     if (!existingScript) {
       const script = document.createElement("script");
-      script.src =
-        "https://hushforms.com/f/public/javascript/embed-hush-form.js";
+      script.src = "https://hushforms.com/f/public/javascript/embed-hush-form.js";
       script.async = true;
       formRef.current.appendChild(script);
     }
-
-    // No cleanup needed, since Hushmail script doesn't provide a destroy method
+    // No cleanup needed because Hushmail doesn't provide a destroy method
   }, []);
 
   return (
-    <Card
-      sx={{ p: 3, borderRadius: 2, boxShadow: 3 }}
-      aria-labelledby="hushmail-form-title"
+    <Box
+      sx={{
+        width: "100%",
+        maxWidth: "100%",
+        p: 0,
+        m: 0,
+        overflow: "visible",
+      }}
     >
-      <Typography variant="h6" gutterBottom id="hushmail-form-title">
+      <Typography
+        variant="h6"
+        gutterBottom
+        id="hushmail-form-title"
+        sx={{ mb: 2 }}
+      >
         Secure Contact Form
       </Typography>
 
@@ -36,7 +44,13 @@ const HushmailForm = () => {
         ref={formRef}
         aria-live="polite"
         tabIndex={-1}
-        sx={{ minHeight: 300 }} // Prevent layout shift while loading
+        sx={{
+          width: "100%",
+          maxWidth: "100%",
+          p: 0,
+          m: 0,
+          overflow: "visible",
+        }}
       >
         <div
           data-secure-form="insightschristiancounseling"
@@ -44,7 +58,7 @@ const HushmailForm = () => {
           aria-label="Hushmail secure contact form"
         ></div>
       </Box>
-    </Card>
+    </Box>
   );
 };
 

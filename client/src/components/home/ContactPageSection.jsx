@@ -20,9 +20,13 @@ const ContactSection = () => {
     "https://maps.apple.com/?q=240+Courthouse+Rd,+Gulfport,+MS+39507";
 
   return (
-    <Box sx={{ p: 4, maxWidth: "1200px", mx: "auto" }} component="section" aria-labelledby="contact-heading">
+    <Box
+      sx={{ p: 4, maxWidth: "1200px", mx: "auto" }}
+      component="section"
+      aria-labelledby="contact-heading"
+    >
       <Typography
-        id="contact-heading" 
+        id="contact-heading"
         variant="h2"
         textAlign="center"
         fontWeight="bold"
@@ -34,13 +38,17 @@ const ContactSection = () => {
 
       <Grid container spacing={4}>
         {/* Left column: Hushmail contact form */}
-        <Grid item xs={12} md={6}>
-          <HushmailForm /> 
+        <Grid item xs={12} md={6} sx={{ p: 0 }}>
+          <HushmailForm />
         </Grid>
 
         {/* Right column: Contact info, directions, map, and map links */}
         <Grid item xs={12} md={6}>
-          <Card sx={{ boxShadow: 3, borderRadius: 2 }} component="address" aria-label="Office contact information">
+          <Card
+            sx={{ boxShadow: 3, borderRadius: 2 }}
+            component="address"
+            aria-label="Office contact information"
+          >
             <CardContent>
               <Typography variant="h6" color="text.secondary" gutterBottom>
                 Insights Christian Counseling
@@ -60,7 +68,11 @@ const ContactSection = () => {
               <Box display="flex" alignItems="center" mb={1}>
                 <PhoneIcon color="primary" sx={{ mr: 1 }} aria-hidden="true" />
                 <Typography>
-                  <a href="tel:2283433432" style={{ color: 'inherit', textDecoration: 'none' }} aria-label="Call (228) 343-3432">
+                  <a
+                    href="tel:2283433432"
+                    style={{ color: "inherit", textDecoration: "none" }}
+                    aria-label="Call (228) 343-3432"
+                  >
                     (228) 343-3432
                   </a>
                 </Typography>
@@ -68,7 +80,11 @@ const ContactSection = () => {
               <Box display="flex" alignItems="center" mb={1}>
                 <PhoneIcon color="primary" sx={{ mr: 1 }} aria-hidden="true" />
                 <Typography>
-                  <a href="tel:2285674612" style={{ color: 'inherit', textDecoration: 'none' }} aria-label="Call (228) 567-4612">
+                  <a
+                    href="tel:2285674612"
+                    style={{ color: "inherit", textDecoration: "none" }}
+                    aria-label="Call (228) 567-4612"
+                  >
                     (228) 567-4612
                   </a>
                 </Typography>
@@ -89,7 +105,8 @@ const ContactSection = () => {
               <Typography mb={2} variant="body1" color="text.primary">
                 Head south on Courthouse Rd. Continue past the railroad tracks,{" "}
                 <br />
-                and our office will be on your left, just after the railroad tracks.
+                and our office will be on your left, just after the railroad
+                tracks.
               </Typography>
 
               <Typography
