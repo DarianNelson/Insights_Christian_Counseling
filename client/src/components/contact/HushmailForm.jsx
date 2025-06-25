@@ -3,10 +3,9 @@ import { Box, Typography } from "@mui/material";
 
 // HushmailForm component embeds a secure third-party contact form using Hushmail
 const HushmailForm = () => {
-  const formRef = useRef(null); // Ref for the form container
+  const formRef = useRef(null);
 
   useEffect(() => {
-    // Prevent duplicate script injection
     const existingScript = document.querySelector(
       'script[src="https://hushforms.com/f/public/javascript/embed-hush-form.js"]'
     );
@@ -17,7 +16,6 @@ const HushmailForm = () => {
       script.async = true;
       formRef.current.appendChild(script);
     }
-    // No cleanup needed because Hushmail doesn't provide a destroy method
   }, []);
 
   return (
@@ -25,9 +23,12 @@ const HushmailForm = () => {
       sx={{
         width: "100%",
         maxWidth: "100%",
-        p: 0,
-        m: 0,
-        overflow: "visible",
+        "& div[data-secure-form]": {
+          width: "100%",
+        },
+        "& iframe": {
+          width: "100%",
+        },
       }}
     >
       <Typography
@@ -39,19 +40,7 @@ const HushmailForm = () => {
         Secure Contact Form
       </Typography>
 
-      {/* Embedded Hushmail form will be injected here */}
-      <Box
-        ref={formRef}
-        aria-live="polite"
-        tabIndex={-1}
-        sx={{
-          width: "100%",
-          maxWidth: "100%",
-          p: 0,
-          m: 0,
-          overflow: "visible",
-        }}
-      >
+      <Box ref={formRef} aria-live="polite" tabIndex={-1}>
         <div
           data-secure-form="insightschristiancounseling"
           data-secure-form-transparent-background="true"
