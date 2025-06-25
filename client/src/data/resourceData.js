@@ -3,41 +3,43 @@
 
 // localResources include regional organizations and support centers
 export const localResources = [
+
   {
+    label: "Gulf Coast Center for Nonviolence",
+    detail: "228-435-1968",
+    tel: "+12284351968",
+    link: "https://www.gccfn.org/wordpress/",
+  },
+    {
     label: "Adrienne's House - Pascagoula",
     detail: "228-762-8267",
     tel: "+12287628267",
-    link: "",
-  },
-  {
-    label: "Gulf Coast Family Justice Center - Biloxi",
-    detail: "228-435-1968",
-    tel: "+12284351968",
-    link: "",
+    link: "https://www.facebook.com/adrienneshouse2011/",
+    note: "Gulf Coast Center for Nonviolence Secondary Domestic Violence Shelter",
   },
   {
     label: "Safe Haven Center- Gulfport",
     detail: "228-547-1143",
     tel: "+12285471143",
-    link: "",
+    link: "https://www.safehavencenterfordv.org/",
   },
   {
     label: "Mental Health Mississippi",
     detail: "601-359-1288",
     tel: "+16013591288",
-    link: "",
+    link: "https://mentalhealthms.com/",
   },
   {
     label: "Mississippi Coalition Against Domestic Violence (MCADV)",
     detail: "601-981-9196",
     tel: "+16019819196",
-    link: "",
+    link: "https://mcadv.org/",
   },
   {
     label: "Osher Lifelong Learning Institute (OLLI)",
     detail: "228-214-3277",
     tel: "+12282143277",
-    link: "",
+    link: "https://www.usm.edu/lifelong-learning/",
   },
   {
     label: "Charles L Walker Senior Center",
@@ -45,45 +47,47 @@ export const localResources = [
     tel: "+12285754535",
     link: "",
   },
+    {
+    label: "Divorce & Grief Recovery Workshops",
+    detail: "228-863-0047",
+    tel: "+12288630047",
+    link: "https://fumc-gulfport.org/livestream-ministries/divorce-grief-recovery",
+    note: "First United Methodist Church",
+  },
 ];
 
 // hotlines include national and regional emergency and support lines
 export const hotlines = [
   {
-    label: "National Domestic Violence Hotline:",
+    label: "National Domestic Violence Hotline",
     detail: "1-800-799-7233",
     tel: "+18007997233",
-    link: "",
+    link: "https://www.thehotline.org/",
   },
   {
-    label: "Gulf Coast Center for Non-Violence",
+    label: "Gulf Coast Center for Non Violence",
     detail: "228-436-3809",
     tel: "+12284363809",
-    link: "",
+    link: "https://www.gccfn.org/wordpress/",
   },
   {
-    label: "Suicide and Crisis Lifeline:",
+    label: "Suicide and Crisis Lifeline",
     detail: "988",
     tel: "988",
-    link: "",
+    link: "https://988lifeline.org/",
     note: "Call or Text", // note field is shown for user context
   },
   {
     label: "Love is Respect",
     detail: "1-866-331-9474",
     tel: "+18663319474",
-    link: "",
+    link: "https://www.loveisrespect.org/",
   },
 ];
 
 //otherResources include websites and general tools outside the local area
 export const otherResources = [
-  {
-    label: "Divorce & Grief Recovery Workshops",
-    detail: "228-863-0047",
-    tel: "+12288630047",
-    link: "",
-  },
+
   {
     label: "Medication Information",
     link: "https://www.drugs.com/",
