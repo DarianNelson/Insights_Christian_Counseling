@@ -151,13 +151,14 @@ const ContactSection = () => {
           </Stack>
         </CardContent>
       </Card>
-      
-      {/* Form section: no Card, just cream background */}
+
+      {/* Form section */}
       <Box
         sx={{
           backgroundColor: "#FAF9F7",
           p: 3,
           borderRadius: 2,
+          mt: 4,
           mb: 4,
           maxWidth: 600,
           mx: "auto",
