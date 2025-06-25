@@ -8,6 +8,7 @@ const services = [
   'Grief',
   'Relationship Issues',
   'EMDR',
+  'OCD',
   'Establishing Boundaries',
   'Adjustment Disorder',
 ];

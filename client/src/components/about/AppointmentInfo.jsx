@@ -222,7 +222,7 @@ const AppointmentInfo = () => {
             <Button
               variant="contained"
               component="a"
-              href="https://your-hushmail-form-link.com"
+              href="https://hushforms.com/insightschristiancounseling"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Schedule an appointment via Hushmail"

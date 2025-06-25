@@ -67,7 +67,7 @@ export const therapistsData = [
     name: "Amanda Whichard, NCC, LPC, LPC/MHSP",
     slug: "amanda-whichard",
     credentials: "Licensed Professional Counselor",
-    license: "MS License TBD · TN License #5462",
+    license: "MS License #3280 · TN License #5462",
     photo: AmandaHeadshot,
     psychologyTodayUrl: "https://www.psychologytoday.com/us/therapists/amanda-whichard-knoxville-tn/965071",
     contactFormUrl: "",
