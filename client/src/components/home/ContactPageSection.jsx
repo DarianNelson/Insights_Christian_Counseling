@@ -34,21 +34,7 @@ const ContactSection = () => {
         Contact Our Office
       </Typography>
 
-      {/* Form section: no Card, just cream background */}
-      <Box
-        sx={{
-          backgroundColor: "#FAF9F7",
-          p: 3,
-          borderRadius: 2,
-          mb: 4,
-          maxWidth: 600,
-          mx: "auto",
-        }}
-      >
-        <HushmailForm />
-      </Box>
-
-      {/* Map + contact info section: keep Card with cream background */}
+      {/* Map + contact info section */}
       <Card
         sx={{
           boxShadow: 3,
@@ -56,7 +42,10 @@ const ContactSection = () => {
           backgroundColor: "#FAF9F7",
         }}
       >
-        <CardContent component="address" aria-label="Office contact information">
+        <CardContent
+          component="address"
+          aria-label="Office contact information"
+        >
           <Typography variant="h6" color="text.secondary" gutterBottom>
             Insights Christian Counseling
           </Typography>
@@ -97,7 +86,8 @@ const ContactSection = () => {
             Directions From the Beach
           </Typography>
           <Typography mb={2}>
-            Head north on Courthouse Rd from Highway 90 (Beach Blvd).<br />
+            Head north on Courthouse Rd from Highway 90 (Beach Blvd).
+            <br />
             You'll find our office on the right, before the railroad tracks.
           </Typography>
 
@@ -161,6 +151,20 @@ const ContactSection = () => {
           </Stack>
         </CardContent>
       </Card>
+      
+      {/* Form section: no Card, just cream background */}
+      <Box
+        sx={{
+          backgroundColor: "#FAF9F7",
+          p: 3,
+          borderRadius: 2,
+          mb: 4,
+          maxWidth: 600,
+          mx: "auto",
+        }}
+      >
+        <HushmailForm />
+      </Box>
     </Box>
   );
 };
