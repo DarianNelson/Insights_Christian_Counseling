@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Box,
+  Grid,
   Typography,
   Button,
   Stack,
@@ -32,8 +33,30 @@ const ContactSection = () => {
         Contact Our Office
       </Typography>
 
-      {/* Contact Info and Map stacked */}
-      <Box sx={{ mb: 4 }}>
+      {/* Form area with warm cream background, no card */}
+      <Box
+        sx={{
+          backgroundColor: "#FAF9F7",
+          p: 3,
+          borderRadius: 2,
+          mb: 4,
+          maxWidth: 600,
+          mx: "auto",
+        }}
+      >
+        <HushmailForm />
+      </Box>
+
+      {/* Card around contact info and map */}
+      <Box
+        component="address"
+        sx={{
+          boxShadow: 3,
+          borderRadius: 2,
+          p: 3,
+        }}
+        aria-label="Office contact information"
+      >
         <Typography variant="h6" color="text.secondary" gutterBottom>
           Insights Christian Counseling
         </Typography>
@@ -52,7 +75,10 @@ const ContactSection = () => {
         <Box display="flex" alignItems="center" mb={1}>
           <PhoneIcon color="primary" sx={{ mr: 1 }} aria-hidden="true" />
           <Typography>
-            <a href="tel:2283433432" style={{ color: "inherit", textDecoration: "none" }}>
+            <a
+              href="tel:2283433432"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
               (228) 343-3432
             </a>
           </Typography>
@@ -60,7 +86,10 @@ const ContactSection = () => {
         <Box display="flex" alignItems="center" mb={1}>
           <PhoneIcon color="primary" sx={{ mr: 1 }} aria-hidden="true" />
           <Typography>
-            <a href="tel:2285674612" style={{ color: "inherit", textDecoration: "none" }}>
+            <a
+              href="tel:2285674612"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
               (228) 567-4612
             </a>
           </Typography>
@@ -134,20 +163,6 @@ const ContactSection = () => {
             Open in Apple Maps
           </Button>
         </Stack>
-      </Box>
-
-      {/* Hushmail Form with cream background */}
-      <Box
-        sx={{
-          backgroundColor: "#FAF9F7",
-          p: 4,
-          borderRadius: 2,
-          maxWidth: 700,
-          mx: "auto",
-          boxShadow: 3,
-        }}
-      >
-        <HushmailForm />
       </Box>
     </Box>
   );
