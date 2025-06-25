@@ -25,7 +25,7 @@ const navItems = [
   { to: "/blog", label: "Blog" },
   { to: "/#contact", label: "Contact" },
   {
-    to: "https://your-practice.clientsecure.me", // Replace with the actual portal URL
+    to: "https://insightschristiancounseling.clientsecure.me/sign-in",
     label: "Client Portal",
     external: true,
   },
