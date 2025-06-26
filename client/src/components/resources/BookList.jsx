@@ -12,13 +12,13 @@ const BookList = ({ books }) => (
       maxHeight: 300,
       overflowY: "auto", // Scrollable if content overflows
       pr: 1, // Padding for scrollbar space
-      mt: 2,
+      mt: 1,
       borderRadius: 2,
-      p: 2,
+      p: 1.5,
     }}
   >
     {/* Stack layout for spacing between book entries */}
-    <Stack spacing={2} alignItems="center">
+    <Stack spacing={1.5} alignItems="center">
       {books.map((book, i) => (
         <Box key={i}>
           {/* Clickable book title link */}

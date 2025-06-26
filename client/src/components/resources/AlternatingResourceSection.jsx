@@ -13,54 +13,79 @@ const AlternatingResourceSection = ({
   return (
     <Box
       component="section"
-      aria-label={`${title} resource section`} 
-      sx={{ backgroundColor: bgColor, py: 8, px: { xs: 2, sm: 4 } }}
+      aria-label={`${title} resource section`}
+      sx={{
+        backgroundColor: bgColor,
+        py: { xs: 4, md: 6 },
+        px: { xs: 2, sm: 4 },
+      }}
     >
       {/* Grid with alternating direction based on the 'reverse' prop */}
       <Grid
         container
         spacing={4}
-        direction={reverse ? "row-reverse" : "row"} // Determines if image is on left or right
-        alignItems="stretch" // Makes image and content the same height
+        direction={reverse ? "row-reverse" : "row"} // Image left or right
+        alignItems="stretch" // Match image and content height
         justifyContent="center"
+        wrap="wrap"
       >
         {/* Image Grid Item */}
-        <Grid item xs={12} md={6}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <Box
             component="img"
             src={image}
-            alt={`${title} visual`} 
+            alt={`${title} visual`}
             sx={{
               width: "100%",
+              maxWidth: 450,
               aspectRatio: "1 / 1",
               objectFit: "cover",
               borderRadius: 4,
-              maxHeight: 450,
+              //maxHeight: 450,
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             }}
           />
         </Grid>
 
         {/* Text Content Grid Item */}
-        <Grid item xs={12} md={6} sx={{ display: "flex" }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <Paper
             elevation={3}
-            role="region" 
-            aria-labelledby={`${title.replace(/\s/g, "-").toLowerCase()}-heading`} 
+            role="region"
+            aria-labelledby={`${title
+              .replace(/\s/g, "-")
+              .toLowerCase()}-heading`}
             sx={{
-              height: 450,
+              maxWidth: 450,
+              width: "100%",
+              minHeight: 450,
               p: 4,
               borderRadius: 4,
-              backgroundColor: "#ffffff",
+              backgroundColor: "#fff",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              width: "100%",
             }}
           >
             {/* Section Title */}
             <Typography
-              id={`${title.replace(/\s/g, "-").toLowerCase()}-heading`} 
+              id={`${title.replace(/\s/g, "-").toLowerCase()}-heading`}
               variant="h3"
               align="center"
               component="h2"
@@ -70,11 +95,11 @@ const AlternatingResourceSection = ({
               {title}
             </Typography>
 
-            {/* Scrollable items container (e.g., list of links or resources) */}
+            {/* Scrollable items container */}
             <Box
               sx={{ maxHeight: 400, overflowY: "auto" }}
-              tabIndex={0} 
-              aria-label={`Scrollable list of ${title.toLowerCase()}`} 
+              tabIndex={0}
+              aria-label={`Scrollable list of ${title.toLowerCase()}`}
             >
               {items}
             </Box>

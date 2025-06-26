@@ -20,17 +20,24 @@ const ResourceSection = () => {
   return (
     <Box
       component="section"
-      sx={{ px: { xs: 2, sm: 4 }, py: 8 }}
-      aria-labelledby="resources" 
+      sx={{
+        px: { xs: 2, sm: 4 },
+        pt: { xs: 2, md: 6 }, 
+        pb: { xs: 2, md: 2 },
+      }}
+      aria-labelledby="resources"
     >
       {/* Section heading */}
       <Typography
-        id="resources" 
+        id="resources"
         variant="h2"
         textAlign="center"
         fontWeight="bold"
         color="#3F7C78"
-        sx={{ mb: 4, fontSize: { xs: "2rem", md: "2.25rem" } }} // Responsive font sizing
+        sx={{
+          mb: 4, // match TherapistsSection title mb
+          fontSize: { xs: "2rem", md: "2.25rem" },
+        }}
       >
         Resources
       </Typography>
@@ -39,20 +46,20 @@ const ResourceSection = () => {
       <AlternatingResourceSection
         title="Recommended Reading"
         items={<BookList books={recommendedBooks} />}
-        image={ReadingImage} 
+        image={ReadingImage}
         bgColor="#F5EFE6"
         reverse={false} // Left image, right text on wide screens
-        aria-label="Section: Recommended Reading Resources" 
+        aria-label="Section: Recommended Reading Resources"
       />
 
       {/* Local Resources section */}
       <AlternatingResourceSection
         title="Local Resources"
         items={<ResourceList title="Local Resources" items={localResources} />}
-        image={LocalImage} 
+        image={LocalImage}
         bgColor="#BFDAD5"
         reverse={true} // Right image, left text on wide screens
-        aria-label="Section: Local Resource Links" 
+        aria-label="Section: Local Resource Links"
       />
 
       {/* Hotlines section: emergency and support contacts */}
@@ -62,17 +69,17 @@ const ResourceSection = () => {
         image={HotlinesImage}
         bgColor="#F5EFE6"
         reverse={false}
-        aria-label="Section: Hotline Numbers and Support Lines" 
+        aria-label="Section: Hotline Numbers and Support Lines"
       />
 
       {/* Other helpful resources */}
       <AlternatingResourceSection
         title="Other Resources"
         items={<ResourceList title="Other Resources" items={otherResources} />}
-        image={OtherImage} 
+        image={OtherImage}
         bgColor="#BFDAD5"
         reverse={true}
-        aria-label="Section: Additional Online and Local Resources" 
+        aria-label="Section: Additional Online and Local Resources"
       />
     </Box>
   );

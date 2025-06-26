@@ -19,7 +19,13 @@ const ContactSection = () => {
 
   return (
     <Box
-      sx={{ p: 4, maxWidth: "900px", mx: "auto" }}
+      sx={{
+        p: { xs: 2, md: 3 },
+        pt: { xs: 2, md: 6 },
+        pb: { xs: 2, md: 2 },
+        maxWidth: "900px",
+        mx: "auto",
+      }}
       component="section"
       aria-labelledby="contact-heading"
     >
@@ -34,7 +40,6 @@ const ContactSection = () => {
         Contact Our Office
       </Typography>
 
-      {/* Map + contact info section */}
       <Card
         sx={{
           boxShadow: 3,
@@ -151,21 +156,22 @@ const ContactSection = () => {
           </Stack>
         </CardContent>
       </Card>
-
-      {/* Form section
+      
+      {/* Hushmail form */}
       <Box
         sx={{
           backgroundColor: "#FAF9F7",
           p: 3,
           borderRadius: 2,
-          mt: 4,
-          mb: 4,
+          mt: 2,
+          mb: 2,
           maxWidth: 600,
           mx: "auto",
         }}
       >
         <HushmailForm />
-      </Box> */}
+      </Box>
+     
     </Box>
   );
 };

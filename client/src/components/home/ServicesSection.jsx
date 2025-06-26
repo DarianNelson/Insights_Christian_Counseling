@@ -1,16 +1,16 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from "@mui/material";
 
 // List of services offered (can be updated in one place)
 const services = [
-  'Anxiety',
-  'Trauma',
-  'Depression',
-  'Grief',
-  'Relationship Issues',
-  'EMDR',
-  'OCD',
-  'Establishing Boundaries',
-  'Adjustment Disorder',
+  "Anxiety",
+  "Trauma",
+  "Depression",
+  "Grief",
+  "Relationship Issues",
+  "EMDR",
+  "OCD",
+  "Establishing Boundaries",
+  "Adjustment Disorder",
 ];
 
 // ServicesSection component: displays a stylized list of services with hover effects
@@ -18,24 +18,25 @@ export default function ServicesSection() {
   return (
     <Box
       component="section"
-      aria-labelledby="services" 
+      aria-labelledby="services"
       sx={{
-        backgroundColor: '#F5EFE6',
-        py: { xs: 4, md: 5 }, // Responsive vertical padding
+        backgroundColor: "#F5EFE6",
+        pt: { xs: 2, md: 6 }, 
+        pb: { xs: 2, md: 2 },
         mt: 0,
       }}
     >
       {/* Section heading */}
       <Typography
-        id="services" 
+        id="services"
         variant="h2"
         fontWeight="bold"
         color="#3F7C78"
         sx={{
           mt: 0,
-          mb: 2,
-          textAlign: 'center',
-          fontSize: { xs: '2rem', md: '2.25rem' }, // Responsive font sizing
+          mb: 4,
+          textAlign: "center",
+          fontSize: { xs: "2rem", md: "2.25rem" }, // Responsive font sizing
         }}
       >
         Services We Offer
@@ -44,27 +45,27 @@ export default function ServicesSection() {
       {/* Card-style container for the services list */}
       <Box
         sx={{
-          backgroundColor: '#FFF',
+          backgroundColor: "#FFF",
           borderRadius: 3,
           boxShadow: 2,
-          maxWidth: '95%',
-          mx: 'auto',
+          maxWidth: "95%",
+          mx: "auto",
           py: 2,
           px: { xs: 2, sm: 4 }, // Responsive horizontal padding
-          textAlign: 'center',
+          textAlign: "center",
         }}
       >
         {/* Service items displayed in a horizontal wrap layout */}
         <Typography
           variant="h6"
           color="#3A3A3A"
-          role="list" 
+          role="list"
           sx={{
             fontWeight: 500,
-            fontSize: { xs: '1.1rem', sm: '1.4rem', md: '1.6rem' }, // Responsive font sizing
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
+            fontSize: { xs: "1.1rem", sm: "1.4rem", md: "1.6rem" }, // Responsive font sizing
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
             gap: 1,
           }}
         >
@@ -73,25 +74,25 @@ export default function ServicesSection() {
             <span
               key={index}
               role="listitem"
-              tabIndex={0} 
+              tabIndex={0}
               style={{
-                transition: 'transform 0.2s ease, color 0.2s ease',
-                cursor: 'default',
-                outline: 'none',
+                transition: "transform 0.2s ease, color 0.2s ease",
+                cursor: "default",
+                outline: "none",
               }}
               onFocus={(e) => {
-                e.target.style.outline = '2px solid #3F7C78'; 
+                e.target.style.outline = "2px solid #3F7C78";
               }}
               onBlur={(e) => {
-                e.target.style.outline = 'none';
+                e.target.style.outline = "none";
               }}
               onMouseEnter={(e) => {
-                e.target.style.transform = 'scale(1.05)';
-                e.target.style.color = '#D38775'; // Accent color on hover
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.color = "#D38775"; // Accent color on hover
               }}
               onMouseLeave={(e) => {
-                e.target.style.transform = 'scale(1)';
-                e.target.style.color = '#3A3A3A'; // Base color
+                e.target.style.transform = "scale(1)";
+                e.target.style.color = "#3A3A3A"; // Base color
               }}
             >
               {service}

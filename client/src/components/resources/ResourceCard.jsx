@@ -19,12 +19,18 @@ const ResourceCard = ({ title, items, color }) => (
     }}
   >
     {/* Section heading */}
-    <Typography variant="h3" color={color} gutterBottom align="center">
+    <Typography
+      variant="h3"
+      fontWeight="bold"
+      color={color}
+      align="center"
+      sx={{ mb: 2 }}
+    >
       {title}
     </Typography>
 
     {/* Resource list */}
-    <Stack spacing={1}>
+    <Stack spacing={1.5}>
       {items?.map((item, i) => {
         const onlyLink = item.link && !item.detail && !item.note;
 

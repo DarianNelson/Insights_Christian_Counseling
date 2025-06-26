@@ -9,8 +9,8 @@ export default function TherapistsSection() {
       aria-labelledby="therapists" 
       sx={{
         backgroundColor: '#F5EFE6',
-        pt: { xs: 6, md: 8 },
-        pb: { xs: 2, md: 2 }, // Tightened bottom padding
+        pt: { xs: 2, md: 6 },
+        pb: { xs: 2, md: 2 }, 
       }}
     >
       <Container>

@@ -30,26 +30,21 @@ const Home = () => {
   return (
     <Box
       component="main"
-      sx={{ backgroundColor: "#F5EFE6" }} 
-      aria-label="Homepage main content" 
+      sx={{ backgroundColor: "#F5EFE6" }}
+      aria-label="Homepage main content"
     >
       {/* Hero image and headline */}
       <Hero />
 
       {/* Therapist introduction section */}
-      <Container
-        maxWidth="lg"
-        sx={{ py: 6 }}
-        aria-label="Therapist introduction section" 
-      >
+      <Container maxWidth="lg" aria-label="Therapist introduction section">
         <TherapistsIntro />
       </Container>
 
       {/* Services highlight section */}
       <Container
         maxWidth="lg"
-        sx={{ py: 6 }}
-        aria-label="List of counseling services we offer" 
+        aria-label="List of counseling services we offer"
       >
         <ServicesSection />
       </Container>
@@ -57,14 +52,13 @@ const Home = () => {
       {/* Blog article previews */}
       {/* <Container
         maxWidth="lg"
-        sx={{ py: 6 }}
         aria-label="Recent blog posts" 
       >
         <BlogSection />
       </Container> */}
 
       {/* Resource links and recommended content */}
-      <Box id="resources" sx={{ py: 6 }} aria-label="Community and reading resources"> 
+      <Box id="resources" aria-label="Community and reading resources">
         <ResourcePageSection />
       </Box>
 
@@ -72,8 +66,7 @@ const Home = () => {
       <Container
         id="contact"
         maxWidth="lg"
-        sx={{ py: 6 }}
-        aria-label="Contact information and inquiry form" 
+        aria-label="Contact information and inquiry form"
       >
         <ContactPageSection />
       </Container>
