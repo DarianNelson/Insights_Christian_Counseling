@@ -23,29 +23,26 @@ const Hero = () => {
         py: { xs: 8, md: 12 },
       }}
     >
-      {/* OVERLAY BACKGROUND FOR TEXT */}
-      <Box
-        sx={{
-          backgroundColor: {
-            xs: "rgba(0, 0, 0, 0.5)",
-            sm: "rgba(0, 0, 0, 0.3)", // Mobile and tablets get the dark overlay
-            md: "transparent", // Desktop stays clean
-          },
-          borderRadius: 2,
-          px: { xs: 2, sm: 4, md: 6 },
-          py: { xs: 3, sm: 4, md: 5 },
-          maxWidth: "md",
-          width: "100%",
-        }}
-      >
-        <Container maxWidth="md">
+      <Container maxWidth="md">
+        {/* OVERLAY FOR TEXT ABOVE THE BUTTON */}
+        <Box
+          sx={{
+            backgroundColor: {
+              xs: "rgba(0, 0, 0, 0.35)", // Lighter overlay for mobile
+              md: "transparent",          // No overlay on desktop
+            },
+            borderRadius: 2,
+            px: { xs: 2, sm: 4, md: 0 },
+            py: { xs: 3, sm: 4, md: 0 },
+          }}
+        >
           {/* SITE TITLE */}
           <Typography
             variant="h1"
             gutterBottom
             sx={{
               fontSize: { xs: "2rem", sm: "2.75rem", md: "3rem" },
-              color: "#FAF9F7", // Slightly warmer white
+              color: "#FAF9F7",
             }}
           >
             INSIGHTS CHRISTIAN COUNSELING
@@ -86,40 +83,40 @@ const Hero = () => {
             that will bring you the freedom to become the best version of
             yourself.
           </Typography>
+        </Box>
 
-          {/* CALL TO ACTION BUTTON */}
-          <Button
-            variant="contained"
-            component="a"
-            href="https://hushforms.com/insightschristiancounseling"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Schedule an appointment through secure form"
-            color="secondary"
-            sx={{
-              mt: 6,
-              fontSize: "1.1rem",
-              px: 5,
-              py: 1.5,
-              fontFamily: "Poppins",
-            }}
-          >
-            Schedule an Appointment
-          </Button>
+        {/* CALL TO ACTION BUTTON */}
+        <Button
+          variant="contained"
+          component="a"
+          href="https://hushforms.com/insightschristiancounseling"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Schedule an appointment through secure form"
+          color="secondary"
+          sx={{
+            mt: 6,
+            fontSize: "1.1rem",
+            px: 5,
+            py: 1.5,
+            fontFamily: "Poppins",
+          }}
+        >
+          Schedule an Appointment
+        </Button>
 
-          {/* CLOSING SCRIPTURE QUOTE */}
-          <Typography
-            variant="h3"
-            aria-label='Scripture: "The Truth will set you free." from John 8:32'
-            sx={{
-              mt: 4,
-              color: "text.primary",
-            }}
-          >
-            "The Truth will set you free." – John 8:32
-          </Typography>
-        </Container>
-      </Box>
+        {/* CLOSING SCRIPTURE QUOTE */}
+        <Typography
+          variant="h3"
+          aria-label='Scripture: "The Truth will set you free." from John 8:32'
+          sx={{
+            mt: 4,
+            color: "text.primary",
+          }}
+        >
+          "The Truth will set you free." – John 8:32
+        </Typography>
+      </Container>
     </Box>
   );
 };
