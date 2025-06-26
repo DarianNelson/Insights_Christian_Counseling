@@ -24,48 +24,47 @@ const Hero = () => {
       }}
     >
       <Container maxWidth="md">
-        {/* OVERLAY FOR TEXT ABOVE THE BUTTON */}
+        {/* SITE TITLE */}
+        <Typography
+          variant="h1"
+          gutterBottom
+          sx={{
+            fontSize: { xs: "2rem", sm: "2.75rem", md: "3rem" },
+            color: "#FAF9F7",
+          }}
+        >
+          INSIGHTS CHRISTIAN COUNSELING
+        </Typography>
+
+        {/* OPENING SCRIPTURE QUOTE */}
+        <Typography
+          variant="h3"
+          gutterBottom
+          aria-label='Scripture: "He heals the brokenhearted..." from Psalm 147:3'
+          sx={{
+            color: "text.secondary",
+            fontSize: { xs: "1.25rem", sm: "1.5rem" },
+          }}
+        >
+          "He heals the brokenhearted..." – Psalm 147:3
+        </Typography>
+
+        {/* MISSION STATEMENT PARAGRAPH WITH MOBILE-ONLY OVERLAY */}
         <Box
           sx={{
             backgroundColor: {
-              xs: "rgba(0, 0, 0, 0.35)", // Lighter overlay for mobile
-              md: "transparent",          // No overlay on desktop
+              xs: "rgba(0, 0, 0, 0.35)",  // Mobile overlay
+              md: "transparent",
             },
-            borderRadius: 2,
-            px: { xs: 2, sm: 4, md: 0 },
-            py: { xs: 3, sm: 4, md: 0 },
+            borderRadius: 1,
+            px: { xs: 2, sm: 3 },
+            py: { xs: 2, sm: 2 },
+            mt: 3,
           }}
         >
-          {/* SITE TITLE */}
-          <Typography
-            variant="h1"
-            gutterBottom
-            sx={{
-              fontSize: { xs: "2rem", sm: "2.75rem", md: "3rem" },
-              color: "#FAF9F7",
-            }}
-          >
-            INSIGHTS CHRISTIAN COUNSELING
-          </Typography>
-
-          {/* OPENING SCRIPTURE QUOTE */}
-          <Typography
-            variant="h3"
-            gutterBottom
-            aria-label='Scripture: "He heals the brokenhearted..." from Psalm 147:3'
-            sx={{
-              color: "text.secondary",
-              fontSize: { xs: "1.25rem", sm: "1.5rem" },
-            }}
-          >
-            "He heals the brokenhearted..." – Psalm 147:3
-          </Typography>
-
-          {/* MISSION STATEMENT PARAGRAPH */}
           <Typography
             variant="body1"
             sx={{
-              mt: 3,
               color: "#FAF9F7",
               textShadow: "1px 1px 3px rgba(0,0,0,0.4)",
               lineHeight: 1.75,
