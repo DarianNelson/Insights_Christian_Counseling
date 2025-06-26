@@ -43,7 +43,7 @@ export const therapistsData = [
       "Trauma-Focused Therapy",
     ],
     fees: [ // Displayed in FeesInsuranceCard component
-      "Standard Session: $200.",
+      "Standard Session: $200",
       " Sliding scale available for private pay clients",
     ],
     insurance: [ // Displayed in FeesInsuranceCard component
@@ -75,7 +75,7 @@ export const therapistsData = [
       // Multiple paragraph bio for detailed therapist profile
       "You may be feeling overwhelmed by the constant cycle of anxiety, intrusive thoughts, or the effects of trauma. It can be exhausting when the strategies that once helped no longer work—leaving you feeling stuck, discouraged, or unsure what to do next. But healing is possible. My goal is to provide a safe, supportive space where you can feel truly heard, understood, and empowered to create real change.",
       "I specialize in working with women navigating anxiety, OCD, and trauma-related challenges. My approach blends warmth and clinical skill, drawing from evidence-based practices like Cognitive Behavioral Therapy (CBT/iCBT), Internal Family Systems (IFS), Mindfulness, and EMDR. I tailor our work together based on your needs and goals—and when desired, I welcome faith and spiritual development into the process.",
-      "I’m a licensed professional counselor (LPC-MHSP) with a Master of Science in Counselor Education from William Carey University. One of my guiding beliefs is that “it’s never too late to make a change.” That mindset has shaped my own path—from a previous career in business to a long-standing calling to walk alongside others in their healing.",
+      "I’m a licensed Professional Counselor (LPC) with a Master of Science in Counselor Education from William Carey University. One of my guiding beliefs is that “it’s never too late to make a change.” That mindset has shaped my own path—from a previous career in business to a long-standing calling to walk alongside others in their healing.",
       "After graduation and beginning my counseling work here along the Gulf Coast, I've spent the past several years practicing in Tennessee. Now, I’m grateful to be back in this community and to have joined Insights Christian Counseling. If you’re ready to move beyond survival mode and toward peace, purpose, and freedom, I invite you to reach out. You don’t have to carry this alone—we can take the next steps together.",
     ],
     // Intro is a shorter version of the bio for the landing page
@@ -102,12 +102,12 @@ export const therapistsData = [
       "Prepare-Enrich",
     ],
     fees: [ // Displayed in FeesInsuranceCard component
-      "Standard Session: $200.", 
+      "Standard Session: $200", 
       " Sliding scale available for private pay clients",
     ], 
     insurance: [ // Displayed in FeesInsuranceCard component
       "Not currently in network with insurance providers",
-      "A superbill can be provided for potential reinbursement through insurance.",
+      "A superbill can be provided for potential reinbursement through insurance",
     ]
   }
 ];
