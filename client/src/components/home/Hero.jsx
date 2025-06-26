@@ -53,7 +53,7 @@ const Hero = () => {
         <Box
           sx={{
             backgroundColor: {
-              xs: "rgba(0, 0, 0, 0.35)",  // Mobile overlay
+              xs: "rgba(0, 50, 80, 0.25)",  // Mobile overlay
               md: "transparent",
             },
             borderRadius: 1,
