@@ -22,7 +22,12 @@ export default function AppRouter() {
         <Route path="/" element={<Home />} /> {/* Main landing page */}
         <Route path="/about" element={<About />} /> {/* Therapist bios, fees, appointment info */}
         <Route path="/blog" element={<Blog />} /> {/* Blog overview page */}
-        <Route path="/blog/sample-post" element={<BlogDetail />} /> {/* Static sample blog detail page */}
+        {/* 
+          Dynamic route for blog posts by slug.
+          Example: /blog/coping-with-anxiety 
+          This will render BlogDetail component fetching content based on slug param.
+        */}
+        <Route path="/blog/:slug" element={<BlogDetail />} />
       </Routes>
     </>
   );
