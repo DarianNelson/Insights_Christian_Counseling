@@ -158,7 +158,7 @@ const ContactSection = () => {
       </Card>
       
       {/* Hushmail form */}
-      {/* <Box
+      <Box
         sx={{
           backgroundColor: "#FAF9F7",
           p: 3,
@@ -170,7 +170,7 @@ const ContactSection = () => {
         }}
       >
         <HushmailForm />
-      </Box> */}
+      </Box>
      
     </Box>
   );
