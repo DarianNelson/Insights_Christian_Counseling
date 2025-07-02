@@ -56,7 +56,7 @@ export default defineType({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
-      description: 'Short summary for blog previews. Recommended: 150 characters max.',
+      description: 'Excerpts should be 150 characters or less.',
       validation: (Rule) => Rule.max(150).warning('Excerpts should be 150 characters or less.'),
     }),
   ],

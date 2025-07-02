@@ -83,6 +83,11 @@ const recommendedBooks = [
     link: "https://a.co/d/colsB6q",
   },
   {
+    title: "When to Walk Away",
+    author: "Gary Thomas",
+    link: "https://a.co/d/i16LSqV",
+  },
+  {
     title: "Untangle Your Emotions",
     author: "Jennie Allen",
     link: "https://a.co/d/3qq2FSy",
