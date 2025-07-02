@@ -3,7 +3,8 @@ import {defineCliConfig} from 'sanity/cli'
 export default defineCliConfig({
   api: {
     projectId: 'r4j51o5y',
-    dataset: 'production'
+    dataset: 'production',
+    studioHost: 'studio-insights-christian-counseling-blog'
   },
   /**
    * Enable auto-updates for studios.
