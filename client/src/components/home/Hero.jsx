@@ -53,7 +53,7 @@ const Hero = () => {
         <Box
           sx={{
             backgroundColor: {
-              xs: "rgba(0, 50, 80, 0.25)",  // Mobile overlay
+              xs: "rgba(0, 50, 80, 0.25)", // Mobile overlay
               md: "transparent",
             },
             borderRadius: 1,
@@ -99,6 +99,9 @@ const Hero = () => {
             px: 5,
             py: 1.5,
             fontFamily: "Poppins",
+            "&:hover": {
+              backgroundColor: "#d87b5f",
+            },
           }}
         >
           Schedule an Appointment

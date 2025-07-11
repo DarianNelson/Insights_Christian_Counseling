@@ -44,7 +44,7 @@ export const therapistsData = [
     ],
     fees: [ // Displayed in FeesInsuranceCard component
       "Standard Session: $200",
-      " Sliding scale available for private pay clients",
+      "Sliding scale available for private pay clients",
     ],
     insurance: [ // Displayed in FeesInsuranceCard component
       "Medicare",
@@ -103,10 +103,10 @@ export const therapistsData = [
     ],
     fees: [ // Displayed in FeesInsuranceCard component
       "Standard Session: $200", 
-      " Sliding scale available for private pay clients",
+      "Sliding scale available for private pay clients",
     ], 
     insurance: [ // Displayed in FeesInsuranceCard component
-      "Not currently in network with insurance providers",
+      "Blue Cross Blue Shield",
       "A superbill can be provided for potential reinbursement through insurance",
     ]
   }

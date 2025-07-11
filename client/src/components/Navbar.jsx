@@ -22,7 +22,6 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/#resources", label: "Resources" },
-  // { to: "/blog", label: "Blog" },
   { to: "/#contact", label: "Contact" },
   {
     to: "https://insightschristiancounseling.clientsecure.me/sign-in",
@@ -46,7 +45,127 @@ const Navbar = () => {
     } else {
       navigate("/");
     }
-    setDrawerOpen(false);
+  };
+
+  // Render a nav item for desktop or drawer
+  const renderNavItem = (item, isDrawer = false) => {
+    const commonStyles = {
+      color: "#3A3A3A",
+      textTransform: "none",
+    };
+
+    const handleClick = (e) => {
+      if (item.to === "/") {
+        e.preventDefault();
+        handleHomeClick(e);
+      }
+      if (isDrawer) setDrawerOpen(false);
+    };
+
+    if (item.external) {
+      const externalProps = {
+        component: "a",
+        href: item.to,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        "aria-label": `Go to ${item.label}`,
+        sx: commonStyles,
+      };
+
+      return isDrawer ? (
+        <ListItemButton {...externalProps} onClick={() => setDrawerOpen(false)}>
+          <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
+        </ListItemButton>
+      ) : (
+        <Button {...externalProps}>{item.label}</Button>
+      );
+    }
+
+    if (item.to === "/") {
+      return isDrawer ? (
+        <ListItemButton
+          onClick={(e) => {
+            handleClick(e);
+          }}
+          component={Link}
+          to="/"
+          aria-label="Home"
+        >
+          <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
+        </ListItemButton>
+      ) : (
+        <Button
+          onClick={handleClick}
+          aria-label="Home"
+          sx={{
+            ...commonStyles,
+            fontSize: "1.1rem",
+            "&:hover": {
+              backgroundColor: "#E89072",
+              color: "#FFFFFF",
+            },
+          }}
+        >
+          {item.label}
+        </Button>
+      );
+    }
+
+    if (item.to.startsWith("/#")) {
+      return isDrawer ? (
+        <ListItemButton
+          component="a"
+          href={item.to}
+          onClick={() => setDrawerOpen(false)}
+          aria-label={`Go to ${item.label}`}
+        >
+          <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
+        </ListItemButton>
+      ) : (
+        <Button
+          component="a"
+          href={item.to}
+          aria-label={`Go to ${item.label}`}
+          sx={{
+            ...commonStyles,
+            fontSize: "1.1rem",
+            "&:hover": {
+              backgroundColor: "#E89072",
+              color: "#FFFFFF",
+            },
+          }}
+        >
+          {item.label}
+        </Button>
+      );
+    }
+
+    return isDrawer ? (
+      <ListItemButton
+        component={Link}
+        to={item.to}
+        onClick={() => setDrawerOpen(false)}
+        aria-label={`Go to ${item.label}`}
+      >
+        <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
+      </ListItemButton>
+    ) : (
+      <Button
+        component={Link}
+        to={item.to}
+        aria-label={`Go to ${item.label}`}
+        sx={{
+          ...commonStyles,
+          fontSize: "1.1rem",
+          "&:hover": {
+            backgroundColor: "#E89072",
+            color: "#FFFFFF",
+          },
+        }}
+      >
+        {item.label}
+      </Button>
+    );
   };
 
   return (
@@ -88,82 +207,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 2 }}>
-              {navItems.map((item) =>
-                item.external ? (
-                  <Button
-                    key={item.to}
-                    component="a"
-                    href={item.to}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Go to ${item.label}`}
-                    sx={{
-                      color: "#3A3A3A",
-                      fontSize: "1.1rem",
-                      textTransform: "none",
-                      "&:hover": {
-                        backgroundColor: "#E89072",
-                        color: "#FFFFFF",
-                      },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                ) : item.to === "/" ? (
-                  <Button
-                    key={item.to}
-                    onClick={handleHomeClick}
-                    aria-label="Home"
-                    sx={{
-                      color: "#3A3A3A",
-                      fontSize: "1.1rem",
-                      textTransform: "none",
-                      "&:hover": {
-                        backgroundColor: "#E89072",
-                        color: "#FFFFFF",
-                      },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                ) : item.to.startsWith("/#") ? (
-                  <Button
-                    key={item.to}
-                    component="a"
-                    href={item.to}
-                    aria-label={`Go to ${item.label}`}
-                    sx={{
-                      color: "#3A3A3A",
-                      fontSize: "1.1rem",
-                      textTransform: "none",
-                      "&:hover": {
-                        backgroundColor: "#E89072",
-                        color: "#FFFFFF",
-                      },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                ) : (
-                  <Button
-                    key={item.to}
-                    component={Link}
-                    to={item.to}
-                    aria-label={`Go to ${item.label}`}
-                    sx={{
-                      color: "#3A3A3A",
-                      fontSize: "1.1rem",
-                      textTransform: "none",
-                      "&:hover": {
-                        backgroundColor: "#E89072",
-                        color: "#FFFFFF",
-                      },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                )
-              )}
+              {navItems.map((item) => (
+                <React.Fragment key={`${item.to}-${item.label}`}>
+                  {renderNavItem(item)}
+                </React.Fragment>
+              ))}
             </Box>
           )}
 
@@ -198,45 +246,11 @@ const Navbar = () => {
           },
         }}
       >
-        <Box
-          role="presentation"
-          onClick={() => setDrawerOpen(false)}
-          aria-label="Navigation drawer content"
-        >
+        <Box role="presentation" aria-label="Navigation drawer content">
           <List>
             {navItems.map((item) => (
-              <ListItem key={item.to} disablePadding>
-                {item.external ? (
-                  <ListItemButton
-                    component="a"
-                    href={item.to}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Go to ${item.label}`}
-                  >
-                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
-                  </ListItemButton>
-                ) : item.to === "/" ? (
-                  <ListItemButton onClick={handleHomeClick} aria-label="Home">
-                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
-                  </ListItemButton>
-                ) : item.to.startsWith("/#") ? (
-                  <ListItemButton
-                    component="a"
-                    href={item.to}
-                    aria-label={`Go to ${item.label}`}
-                  >
-                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
-                  </ListItemButton>
-                ) : (
-                  <ListItemButton
-                    component={Link}
-                    to={item.to}
-                    aria-label={`Go to ${item.label}`}
-                  >
-                    <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
-                  </ListItemButton>
-                )}
+              <ListItem key={`${item.to}-${item.label}`} disablePadding>
+                {renderNavItem(item, true)}
               </ListItem>
             ))}
           </List>
