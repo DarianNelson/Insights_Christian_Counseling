@@ -102,7 +102,7 @@ export const therapistsData = [
       "Prepare-Enrich",
     ],
     fees: [ // Displayed in FeesInsuranceCard component
-      "Standard Session: $200", 
+      "Standard Session: $250", 
       "Sliding scale available for private pay clients",
     ], 
     insurance: [ // Displayed in FeesInsuranceCard component
