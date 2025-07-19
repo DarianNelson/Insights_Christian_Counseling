@@ -15,7 +15,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../assets/images/Logo/Insights_Logo.PNG";
+import Logo from "../assets/images/Logo/Insights_Logo.png";
 
 // Navigation items with routes or external links
 const navItems = [
