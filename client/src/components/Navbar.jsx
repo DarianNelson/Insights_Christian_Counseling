@@ -78,7 +78,19 @@ const Navbar = () => {
           <ListItemText primary={item.label} sx={{ color: "#3A3A3A" }} />
         </ListItemButton>
       ) : (
-        <Button {...externalProps}>{item.label}</Button>
+        <Button
+          {...externalProps}
+          sx={{
+            ...commonStyles,
+            fontSize: "1.1rem",
+            "&:hover": {
+              backgroundColor: "#E89072",
+              color: "#FFFFFF",
+            },
+          }}
+        >
+          {item.label}
+        </Button>
       );
     }
 
