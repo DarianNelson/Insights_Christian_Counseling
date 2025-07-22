@@ -8,7 +8,7 @@ export const therapistsData = [
   {
     name: "Lisa Parsons, LCSW",
     slug: "lisa-parsons",
-    credentials: "Licensed Professional Counselor",
+    credentials: "Licensed Clinical Social Worker",
     license: "MS License #9311",
     affiliation: "Member in good standing with the American Association of Christian Counselors",
     photo: LisaHeadshot, 

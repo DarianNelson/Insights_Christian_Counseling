@@ -1,23 +1,34 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Node dependencies
 /node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
-
-# production
+# Build outputs
 /build
+/.vercel
+/.netlify
 
-# misc
+# Sanity Studio cache and output
+.sanity
+.sanity-cache
+.sanity-temp
+/dist
+
+# System files
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
+# Environment variables
+.env
+.env.*.local
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Testing
+/coverage
+
+# Misc
+*.local
+*.log
