@@ -75,7 +75,7 @@ const AppointmentInfo = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: { xs: 280, md: 340 },
+          height: { xs: 325, md: 340 },
           px: 2,
           mb: 0,
           py: { xs: 4, md: 6 },
@@ -167,7 +167,7 @@ const AppointmentInfo = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: { xs: 280, md: 340 },
+            height: { xs: 300, md: 340 },
             textAlign: "center",
             mt: 0,
             mb: 0,
@@ -226,13 +226,11 @@ const AppointmentInfo = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Schedule an appointment via Hushmail"
+              color="secondary"
               sx={{
-                backgroundColor: "#E89072",
-                color: "#fff",
-                fontWeight: "bold",
-                px: 4,
+                fontSize: "1.1rem",
+                px: 5,
                 py: 1.5,
-                fontSize: "1.5rem",
                 borderRadius: "999px",
                 textTransform: "none",
                 "&:hover": {

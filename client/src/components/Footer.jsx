@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, Link as MuiLink, Divider } from "@mui/material";
-import Logo from "../assets/images/Logo/Insights_Logo.PNG";
+import Logo from "../assets/images/Logo/Insights_Logo.png";
 
 // Footer component: site-wide footer containing navigation, contact info, legal links, and disclaimers
 const Footer = () => {
