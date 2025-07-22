@@ -2,9 +2,12 @@
 
 # Node dependencies
 /node_modules
+.pnp/
+.pnp.js
 
 # Build outputs
 /build
+/dist/
 /.vercel
 /.netlify
 
@@ -12,23 +15,31 @@
 .sanity
 .sanity-cache
 .sanity-temp
-/dist
 
-# System files
-.DS_Store
+# Testing output
+/coverage/
 
 # Environment variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 .env.*.local
 
-# Logs
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Testing
-/coverage
+# System files
+.DS_Store
+
+# Mac system files
+.DS_Store
+
+# VS Code settings
+.vscode/
 
 # Misc
 *.local

@@ -11,7 +11,7 @@ import {
 import { client } from "../sanityClient";
 import { Helmet } from "react-helmet";
 import { blogPostsQuery } from "../queries";
-import Logo from "../assets/images/Logo/Insights_Logo.PNG";
+import Logo from "../assets/images/Logo/Insights_Logo.png";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);

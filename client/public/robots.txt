@@ -1,5 +1,5 @@
 User-agent: *
+Disallow: /blog/
 Allow: /
 
-# Uncomment this line when you add your sitemap later:
-# Sitemap: https://insightschristiancounseling.com/sitemap.xml
+Sitemap: https://insightschristiancounseling.com/sitemap.xml

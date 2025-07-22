@@ -22,6 +22,7 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/#resources", label: "Resources" },
+  //{ to: "/blog", label: "Blog" },
   { to: "/#contact", label: "Contact" },
   {
     to: "https://insightschristiancounseling.clientsecure.me/sign-in",
