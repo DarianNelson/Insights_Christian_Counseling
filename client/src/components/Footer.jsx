@@ -1,13 +1,42 @@
+import React, { useEffect } from "react";
 import { Box, Grid, Typography, Link as MuiLink, Divider } from "@mui/material";
 import Logo from "../assets/images/Logo/Insights_Logo.png";
 
 // Footer component: site-wide footer containing navigation, contact info, legal links, and disclaimers
 const Footer = () => {
+  useEffect(() => {
+
+  const target = document.getElementById("psychology-today-badge");
+  if (!target) {
+    console.warn("Psychology Today badge container not found");
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = "https://member.psychologytoday.com/verified-seal.js";
+  script.type = "text/javascript";
+  script.async = true;
+  script.setAttribute("data-badge", "13");
+  script.setAttribute("data-id", "982404");
+  script.setAttribute(
+    "data-code",
+    "aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzk4MjQwND9jYWxsYmFjaz1zeGNhbGxiYWNr"
+  );
+
+  target.appendChild(script);
+
+  return () => {
+    if (target.contains(script)) {
+      target.removeChild(script);
+    }
+  };
+}, []);
+
   return (
     <Box
       id="footer"
-      component="footer" 
-      aria-label="Website footer with navigation and contact information" 
+      component="footer"
+      aria-label="Website footer with navigation and contact information"
       sx={{
         backgroundColor: "#FAF9F7",
         color: "#3A3A3A",
@@ -23,7 +52,7 @@ const Footer = () => {
           <Box
             component="img"
             src={Logo}
-            alt="Insights Christian Counseling Logo" 
+            alt="Insights Christian Counseling Logo"
             sx={{
               width: { xs: 160, sm: 200, md: 260 }, // Responsive sizing
               height: "auto",
@@ -70,7 +99,7 @@ const Footer = () => {
                   href="tel:12285674612"
                   underline="hover"
                   color="inherit"
-                  aria-label="Call (228) 567-4612" 
+                  aria-label="Call (228) 567-4612"
                 >
                   (228) 567-4612
                 </MuiLink>
@@ -82,11 +111,22 @@ const Footer = () => {
               <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
                 Explore
               </Typography>
-              <MuiLink href="/" underline="hover" color="inherit">Home</MuiLink><br />
-              <MuiLink href="/about" underline="hover" color="inherit">About</MuiLink><br />
-              <MuiLink href="/#resources" underline="hover" color="inherit">Resources</MuiLink><br />
+              <MuiLink href="/" underline="hover" color="inherit">
+                Home
+              </MuiLink>
+              <br />
+              <MuiLink href="/about" underline="hover" color="inherit">
+                About
+              </MuiLink>
+              <br />
+              <MuiLink href="/#resources" underline="hover" color="inherit">
+                Resources
+              </MuiLink>
+              <br />
               {/* <MuiLink href="/blog" underline="hover" color="inherit">Blog</MuiLink><br /> */}
-              <MuiLink href="/#contact" underline="hover" color="inherit">Contact</MuiLink>
+              <MuiLink href="/#contact" underline="hover" color="inherit">
+                Contact
+              </MuiLink>
             </Grid>
 
             {/* Support Links Column */}
@@ -100,7 +140,8 @@ const Footer = () => {
                 color="inherit"
               >
                 New Patients
-              </MuiLink><br />
+              </MuiLink>
+              <br />
               <MuiLink
                 href="/about#insurance"
                 underline="hover"
@@ -121,17 +162,18 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 underline="hover"
                 color="inherit"
-                aria-label="Download Privacy Practices PDF" 
+                aria-label="Download Privacy Practices PDF"
               >
                 Privacy Practices
-              </MuiLink><br />
+              </MuiLink>
+              <br />
               <MuiLink
                 href="https://www.cms.gov/nosurprises"
                 target="_blank"
                 rel="noopener noreferrer"
                 underline="hover"
                 color="inherit"
-                aria-label="View No Surprises Act information on CMS website" 
+                aria-label="View No Surprises Act information on CMS website"
               >
                 No Surprises Act
               </MuiLink>
@@ -164,11 +206,23 @@ const Footer = () => {
         </Typography>
       </Box>
 
+      {/* Psychology Today badge */}
+      <Box id="psychology-today-badge" sx={{ textAlign: "center", mt: 4 }}>
+        <a
+          href="https://www.psychologytoday.com/profile/982404"
+          className="sx-verified-seal"
+          aria-label="View Lisa's verified Psychology Today profile"
+        >
+          {/* Fallback content for accessibility and linter */}
+          View Verified Profile
+        </a>
+      </Box>
+
       {/* Copyright */}
       <Box mt={4} textAlign="center">
         <Typography variant="caption">
-          © {new Date().getFullYear()} Insights Christian Counseling. All
-          rights reserved.
+          © {new Date().getFullYear()} Insights Christian Counseling. All rights
+          reserved.
         </Typography>
       </Box>
     </Box>
