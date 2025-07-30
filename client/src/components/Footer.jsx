@@ -1,36 +1,8 @@
-import React, { useEffect } from "react";
 import { Box, Grid, Typography, Link as MuiLink, Divider } from "@mui/material";
 import Logo from "../assets/images/Logo/Insights_Logo.png";
 
 // Footer component: site-wide footer containing navigation, contact info, legal links, and disclaimers
 const Footer = () => {
-  useEffect(() => {
-
-  const target = document.getElementById("psychology-today-badge");
-  if (!target) {
-    console.warn("Psychology Today badge container not found");
-    return;
-  }
-
-  const script = document.createElement("script");
-  script.src = "https://member.psychologytoday.com/verified-seal.js";
-  script.type = "text/javascript";
-  script.async = true;
-  script.setAttribute("data-badge", "13");
-  script.setAttribute("data-id", "982404");
-  script.setAttribute(
-    "data-code",
-    "aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzk4MjQwND9jYWxsYmFjaz1zeGNhbGxiYWNr"
-  );
-
-  target.appendChild(script);
-
-  return () => {
-    if (target.contains(script)) {
-      target.removeChild(script);
-    }
-  };
-}, []);
 
   return (
     <Box
@@ -204,18 +176,6 @@ const Footer = () => {
           If you are experiencing a mental health emergency, please call 911 or
           go to your nearest emergency room.
         </Typography>
-      </Box>
-
-      {/* Psychology Today badge */}
-      <Box id="psychology-today-badge" sx={{ textAlign: "center", mt: 4 }}>
-        <a
-          href="https://www.psychologytoday.com/profile/982404"
-          className="sx-verified-seal"
-          aria-label="View Lisa's verified Psychology Today profile"
-        >
-          {/* Fallback content for accessibility and linter */}
-          View Verified Profile
-        </a>
       </Box>
 
       {/* Copyright */}
