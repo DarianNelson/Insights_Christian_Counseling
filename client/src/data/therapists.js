@@ -107,6 +107,8 @@ export const therapistsData = [
     ], 
     insurance: [ // Displayed in FeesInsuranceCard component
       "Blue Cross Blue Shield",
+      "TriCare",
+      "First Choice",
       "A superbill can be provided for potential reinbursement through insurance",
     ]
   }
