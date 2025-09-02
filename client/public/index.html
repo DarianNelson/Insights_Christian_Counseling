@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-   <link rel="icon" href="%PUBLIC_URL%/images/favicon.png" />
+    <link rel="icon" href="%PUBLIC_URL%/images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#3F7C78" />
     <meta name="robots" content="index, follow" />
@@ -10,35 +10,75 @@
     <!-- Primary Meta Tags -->
     <title>Insights Christian Counseling</title>
     <!-- <link rel="canonical" href="https://insightschristiancounseling.com/" /> -->
-    <meta name="description" content="Faith-based therapy and counseling services rooted in compassion, care, and confidentiality. Now accepting new clients." />
+    <meta
+      name="description"
+      content="Faith-based therapy and counseling services rooted in compassion, care, and confidentiality. Now accepting new clients."
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://insightschristiancounseling.com/" />
+    <meta
+      property="og:url"
+      content="https://insightschristiancounseling.com/"
+    />
     <meta property="og:title" content="Insights Christian Counseling" />
-    <meta property="og:description" content="Faith-based therapy and counseling services rooted in compassion, care, and confidentiality." />
-    <meta property="og:image" content="%PUBLIC_URL%/images/og-image-insights-christian-counseling.png" />
+    <meta
+      property="og:description"
+      content="Faith-based therapy and counseling services rooted in compassion, care, and confidentiality."
+    />
+    <meta
+      property="og:image"
+      content="%PUBLIC_URL%/images/og-image-insights-christian-counseling.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://insightschristiancounseling.com/" />
+    <meta
+      property="twitter:url"
+      content="https://insightschristiancounseling.com/"
+    />
     <meta property="twitter:title" content="Insights Christian Counseling" />
-    <meta property="twitter:description" content="Faith-based therapy and counseling services rooted in compassion, care, and confidentiality." />
-    <meta property="twitter:image" content="%PUBLIC_URL%/images/og-image-insights-christian-counseling.png" />
+    <meta
+      property="twitter:description"
+      content="Faith-based therapy and counseling services rooted in compassion, care, and confidentiality."
+    />
+    <meta
+      property="twitter:image"
+      content="%PUBLIC_URL%/images/og-image-insights-christian-counseling.png"
+    />
 
     <!-- Apple Touch Icon -->
-   <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      href="%PUBLIC_URL%/images/apple-touch-icon.png"
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Web Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Content Security Policy to allow Sanity fetch -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    connect-src 'self' https://r4j51o5y.apicdn.sanity.io https://r4j51o5y.api.sanity.io;
+    script-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com 'unsafe-inline';
+    style-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com 'unsafe-inline';
+    img-src 'self' data: https://r4j51o5y.apicdn.sanity.io;
+    font-src 'self' https://fonts.gstatic.com;
+    "
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
