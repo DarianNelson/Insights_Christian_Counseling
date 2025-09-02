@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /blog/
 Allow: /
 
 Sitemap: https://insightschristiancounseling.com/sitemap.xml
