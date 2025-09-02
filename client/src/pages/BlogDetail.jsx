@@ -95,7 +95,7 @@ const BlogDetail = () => {
                 alt={`Cover image for ${post.title}`}
                 sx={{
                   width: "100%",
-                  height: "auto",
+                  maxHeight: 400,
                   borderRadius: 2,
                   mb: 4,
                   objectFit: "cover",
