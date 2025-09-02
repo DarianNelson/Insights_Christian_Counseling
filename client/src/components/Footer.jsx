@@ -95,7 +95,7 @@ const Footer = () => {
                 Resources
               </MuiLink>
               <br />
-              {/* <MuiLink href="/blog" underline="hover" color="inherit">Blog</MuiLink><br /> */}
+              <MuiLink href="/blog" underline="hover" color="inherit">Blog</MuiLink><br />
               <MuiLink href="/#contact" underline="hover" color="inherit">
                 Contact
               </MuiLink>

@@ -4,34 +4,30 @@ import {
   Typography,
   Grid,
   Card,
+  CardActionArea,
   CardContent,
-  CardMedia,
-  Button,
-} from '@mui/material';
-import BlogPlaceHolder1 from '../../assets/images/Blog/blog1.png';
-import BlogPlaceHolder2 from '../../assets/images/Blog/blog2.jpg';
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { client } from "../../sanityClient";
+import { blogPostsQuery } from "../../queries";
+import Logo from "../../assets/images/Logo/Insights_Logo.png";
 
-// Sample blog data array
-const blogs = [
-  {
-    title: 'Faith and Mental Health',
-    image: BlogPlaceHolder1,
-    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    title: 'Letting Go of What Hurts',
-    image: BlogPlaceHolder2,
-    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-];
-
-// Main component for displaying recent blog entries
 export default function BlogSection() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    client.fetch(blogPostsQuery).then((data) => {
+      // Just grab the first 2–3 posts for preview
+      setBlogs(data.slice(0, 3));
+    });
+  }, []);
+
   return (
     <Box
-      sx={{ backgroundColor: '#F5EFE6', py: 6 }}
+      sx={{ backgroundColor: "#F5EFE6", py: 6 }}
       component="section"
-      aria-labelledby="blog-section-heading" 
+      aria-labelledby="blog-section-heading"
     >
       <Container>
         {/* Section heading */}
@@ -40,114 +36,165 @@ export default function BlogSection() {
           color="#3F7C78"
           fontWeight="bold"
           textAlign="center"
-          id="blog-section-heading" 
-          sx={{ mb: 4, fontSize: { xs: '2rem', md: '2.25rem' } }}
+          id="blog-section-heading"
+          sx={{ mb: 4, fontSize: { xs: "2rem", md: "2.25rem" } }}
         >
           Recent Blog Articles
         </Typography>
 
-        {/* Responsive grid for blog cards */}
-        <Grid container spacing={4} justifyContent="center">
-          {blogs.map((blog, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              {/* Each card represents a blog article */}
+        {/* Blog previews */}
+        <Grid container spacing={{ xs: 2, sm: 4 }} justifyContent="center">
+          {blogs.map((post) => (
+            <Grid
+              key={post._id}
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
               <Card
                 sx={{
-                  backgroundColor: '#FAF9F7',
-                  borderRadius: 3,
-                  boxShadow: 2,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: 4,
-                  },
+                  height: 320,
+                  width: "100%",
+                  maxWidth: 350,
+                  display: "flex",
+                  flexDirection: "column",
+                  backgroundColor: "#FAF9F7",
                 }}
-                role="article" 
-                aria-label={`Blog article titled ${blog.title}`} 
+                elevation={3}
               >
-                {/* Blog image with alt text */}
-                <CardMedia
-                  component="img"
-                  image={blog.image}
-                  alt={`Illustration for article: ${blog.title}`} 
+                <CardActionArea
+                  component={RouterLink}
+                  to={`/blog/${post.slug.current}`}
                   sx={{
-                    height: 200,
-                    width: '100%',
-                    objectFit: 'cover',
-                    borderTopLeftRadius: 12,
-                    borderTopRightRadius: 12,
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
-                />
-
-                {/* Blog title and summary */}
-                <CardContent
-                  sx={{
-                    flex: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    flexGrow: 1,
-                  }}
+                  aria-label={`Read more about ${post.title}`}
                 >
-                  <Box>
-                    <Typography variant="h5" fontWeight="bold" gutterBottom>
-                      {blog.title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ mb: 2 }}>
-                      {blog.summary}
-                    </Typography>
+                  {/* Image fallback just like BlogPage */}
+                  <Box
+                    sx={{
+                      width: "100%",
+                      height: 160,
+                      backgroundColor: post.mainImage?.asset?.url
+                        ? "transparent"
+                        : "#D3E3DC",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {post.mainImage?.asset?.url ? (
+                      <Box
+                        component="img"
+                        src={post.mainImage.asset.url}
+                        alt={`Cover image for ${post.title}`}
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          display: "block",
+                        }}
+                      />
+                    ) : (
+                      <Box
+                        component="img"
+                        src={Logo}
+                        alt="Insights Christian Counseling logo"
+                        sx={{
+                          maxWidth: "60%",
+                          height: "auto",
+                          opacity: 0.5,
+                        }}
+                      />
+                    )}
                   </Box>
 
-                  {/* "Read More" button */}
-                  <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                    <Button
-                      size="large"
-                      aria-label={`Read more about ${blog.title}`} 
+                  <CardContent
+                    sx={{
+                      flexGrow: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      width: "100%",
+                      px: 2,
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      color="#D38775"
+                      gutterBottom
+                      sx={{ textAlign: "left", wordBreak: "break-word" }}
+                    >
+                      {post.title}
+                    </Typography>
+
+                    <Typography
+                      variant="caption"
+                      color="#3A3A3A"
+                      sx={{ mt: 2, textAlign: "left" }}
+                    >
+                      {new Date(post.publishedAt).toLocaleDateString(
+                        undefined,
+                        {
+                          month: "long",
+                          day: "numeric",
+                          year: "numeric",
+                        }
+                      )}
+                    </Typography>
+
+                    <Typography
+                      component={RouterLink}
+                      to={`/blog/${post.slug.current}`}
                       sx={{
-                        color: '#D38775',
-                        border: '1px solid #D38775',
-                        borderRadius: '50px',
-                        px: 3,
-                        py: 1.5,
-                        '&:hover': {
-                          backgroundColor: '#D38775',
-                          color: '#FAF9F7',
+                        mt: 1,
+                        color: "#3F7C78",
+                        fontWeight: 500,
+                        fontSize: "0.9rem",
+                        textDecoration: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        textAlign: "left",
+                        "&:hover": {
+                          color: "#2E5958",
+                          textDecoration: "underline",
                         },
                       }}
                     >
-                      Read More
-                    </Button>
-                  </Box>
-                </CardContent>
+                      Read More{" "}
+                      <Box component="span" sx={{ ml: 0.5 }}>
+                        &gt;
+                      </Box>
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </Card>
             </Grid>
           ))}
         </Grid>
 
-        {/* CTA button to view all blog posts */}
-        <Box textAlign="center" mt={6}>
-          <Button
-            variant="outlined"
-            aria-label="View all blog posts" 
-            sx={{
-              color: '#3F7C78',
-              border: '2px solid #3F7C78',
-              borderRadius: '50px',
-              px: 4,
-              py: 1.5,
-              fontWeight: 'bold',
-              '&:hover': {
-                backgroundColor: '#3F7C78',
-                color: '#FAF9F7',
-              },
-            }}
-          >
-            View All Posts
-          </Button>
-        </Box>
+        {/* Subtle "View All" link */}
+        {blogs.length > 0 && (
+          <Box textAlign="center" mt={{ xs: 3, md: 4}}>
+            <RouterLink
+              to="/blog"
+              style={{
+                color: "#3F7C78",
+                fontWeight: 500,
+                textDecoration: "underline",
+                fontSize: "1rem",
+              }}
+            >
+              View All Blog Posts &rarr;
+            </RouterLink>
+          </Box>
+        )}
       </Container>
     </Box>
   );

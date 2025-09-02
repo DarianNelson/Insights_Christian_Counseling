@@ -6,7 +6,7 @@ import { Container, Box } from "@mui/material";
 import Hero from "../components/home/Hero";
 import TherapistsIntro from "../components/home/TherapistIntro";
 import ServicesSection from "../components/home/ServicesSection";
-// import BlogSection from "../components/home/BlogSection";
+import BlogSection from "../components/home/BlogSection";
 import ResourcePageSection from "../components/home/ResourcePageSection";
 import ContactPageSection from "../components/home/ContactPageSection";
 
@@ -50,12 +50,12 @@ const Home = () => {
       </Container>
 
       {/* Blog article previews */}
-      {/* <Container
+      <Container
         maxWidth="lg"
         aria-label="Recent blog posts" 
       >
         <BlogSection />
-      </Container> */}
+      </Container>
 
       {/* Resource links and recommended content */}
       <Box id="resources" aria-label="Community and reading resources">
