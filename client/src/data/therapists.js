@@ -107,8 +107,11 @@ export const therapistsData = [
     ], 
     insurance: [ // Displayed in FeesInsuranceCard component
       "Blue Cross Blue Shield",
+      "United Health Care",
+      "Optum",
       "TriCare",
       "First Choice",
+      //"VACCN",
       "A superbill can be provided for potential reinbursement through insurance",
     ]
   }
