@@ -9,7 +9,7 @@
 - **Routing**: React Router DOM  
 - **State Management**: React Hooks  
 - **Accessibility**: ARIA labels, semantic HTML, keyboard navigation support  
-- **Content Management**: Sanity.io (in progress)  
+- **Content Management**: Sanity.io
 - **Hosting**: Vercel  
 
 ## Project Structure
