@@ -111,7 +111,7 @@ export const therapistsData = [
       "Optum",
       "TriCare",
       "First Choice",
-      //"VACCN",
+      "VACCN",
       "A superbill can be provided for potential reinbursement through insurance",
     ]
   }
