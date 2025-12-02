@@ -66,16 +66,6 @@ const Footer = () => {
                   (228) 343-3432
                 </MuiLink>
               </Typography>
-              <Typography variant="body2" gutterBottom>
-                <MuiLink
-                  href="tel:12285674612"
-                  underline="hover"
-                  color="inherit"
-                  aria-label="Call (228) 567-4612"
-                >
-                  (228) 567-4612
-                </MuiLink>
-              </Typography>
             </Grid>
 
             {/* Explore Links Column */}

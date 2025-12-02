@@ -75,18 +75,6 @@ const ContactSection = () => {
               </a>
             </Typography>
           </Box>
-          <Box display="flex" alignItems="center" mb={1}>
-            <PhoneIcon color="primary" sx={{ mr: 1 }} aria-hidden="true" />
-            <Typography>
-              <a
-                href="tel:2285674612"
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                (228) 567-4612
-              </a>
-            </Typography>
-          </Box>
-
           <Typography variant="h6" color="text.secondary" gutterBottom>
             Directions From the Beach
           </Typography>
