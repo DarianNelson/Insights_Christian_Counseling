@@ -157,7 +157,7 @@ const ContactSection = () => {
           mx: "auto",
         }}
       >
-        <HushmailForm />
+      <HushmailForm />
       </Box>
      
     </Box>

@@ -3,6 +3,7 @@ import { Box, Typography, Divider } from "@mui/material";
 
 // Imported sub-sections of the About page
 import AboutIntro from "../components/about/AboutIntro"; 
+import HiringBanner from "../components/about/HiringBanner";
 import TeamSection from "../components/about/TeamSection"; 
 import AppointmentInfo from "../components/about/AppointmentInfo"; 
 
@@ -14,6 +15,9 @@ const About = () => {
     >
       {/* Introductory banner section with background image and mission statement */}
       <AboutIntro /> 
+
+      {/* Banner to advertise open position */}
+      <HiringBanner />
 
       {/* Team section container: therapists and heading */}
       <Box
