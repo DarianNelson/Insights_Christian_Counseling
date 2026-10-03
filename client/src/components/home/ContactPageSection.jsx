@@ -13,9 +13,9 @@ import HushmailForm from "../contact/HushmailForm";
 
 const ContactSection = () => {
   const googleMapsUrl =
-    "https://www.google.com/maps/place/Insights+Christian+Counseling/@30.3819389,-89.0462734,17z/data=!4m15...";
-  const appleMapsUrl =
-    "https://maps.apple.com/?q=240+Courthouse+Rd,+Gulfport,+MS+39507";
+    "https://www.google.com/maps/dir//Insights+Christian+Counseling,+450+E+Pass+Rd+Ste+107,+Gulfport,+MS+39507/@30.4085685,-89.0684495,10z/data=!4m8!4m7!1m0!1m5!1m1!1s0x889c17bc5c18e7a9:0x1648aff79349b27d!2m2!1d-89.0424336!2d30.3952419?hl=en&authuser=1&entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D";
+
+  const appleMapsUrl = "https://maps.apple/p/J~DArskmuHJ4M9";
 
   return (
     <Box
@@ -58,7 +58,7 @@ const ContactSection = () => {
           <Box display="flex" alignItems="center" mb={1}>
             <RoomIcon color="primary" sx={{ mr: 1 }} aria-hidden="true" />
             <Typography>
-              240B Courthouse Rd
+              450 E Pass Rd, Suite 107
               <br />
               Gulfport, MS 39507
             </Typography>
@@ -81,20 +81,21 @@ const ContactSection = () => {
           <Typography mb={2}>
             Head north on Courthouse Rd from Highway 90 (Beach Blvd).
             <br />
-            You'll find our office on the right, before the railroad tracks.
+            Go over the railroad tracks, then turn right onto Pass Rd (east).
+            You'll find our office on the right.
           </Typography>
 
           <Typography variant="h6" color="text.secondary" gutterBottom>
-            Directions From Pass Road
+            Directions From Cowan-Lorraine Road
           </Typography>
           <Typography mb={2}>
-            Head south on Courthouse Rd. Continue past the railroad tracks,
+            Head south on Cowan-Lorraine Rd. Turn right onto E Pass Rd.
             <br />
-            and our office will be on your left, just after the railroad tracks.
+            Our office will be on your left.
           </Typography>
 
           <Typography mb={2} color="#D38775" fontWeight="italic">
-            Parking is available to the side and behind the building.
+            Parking is available in the lot in front of the suite.
           </Typography>
 
           <Box
@@ -144,7 +145,7 @@ const ContactSection = () => {
           </Stack>
         </CardContent>
       </Card>
-      
+
       {/* Hushmail form */}
       <Box
         sx={{
@@ -159,7 +160,6 @@ const ContactSection = () => {
       >
       <HushmailForm />
       </Box>
-     
     </Box>
   );
 };

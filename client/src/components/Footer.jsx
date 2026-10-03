@@ -52,7 +52,7 @@ const Footer = () => {
                 variant="body2"
                 aria-label="View location on Google Maps"
               >
-                240B Courthouse Rd.
+                450 E Pass Rd, Suite 107.
                 <br /> Gulfport, MS 39507
               </MuiLink>
 
