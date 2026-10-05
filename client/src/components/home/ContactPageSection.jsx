@@ -82,7 +82,7 @@ const ContactSection = () => {
             Head north on Courthouse Rd from Highway 90 (Beach Blvd).
             <br />
             Go over the railroad tracks, then turn right onto Pass Rd (east).
-            You'll find our office on the right.
+            You'll find our office on the left.
           </Typography>
 
           <Typography variant="h6" color="text.secondary" gutterBottom>
@@ -91,7 +91,7 @@ const ContactSection = () => {
           <Typography mb={2}>
             Head south on Cowan-Lorraine Rd. Turn right onto E Pass Rd.
             <br />
-            Our office will be on your left.
+            Our office will be on your right.
           </Typography>
 
           <Typography mb={2} color="#D38775" fontWeight="italic">
